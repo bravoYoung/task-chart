@@ -46,7 +46,7 @@ export default class PersonCompareChartCanvas extends Component {
 
       let personData = {}
 
-      console.log('personName', personName)
+      // console.log('personName', personName)
 
       if (obj[personName] && obj[personName][props.template] && obj[personName][props.template][chartDataType]) {
         personData.name = personName
@@ -61,7 +61,7 @@ export default class PersonCompareChartCanvas extends Component {
       return b.totalPage - a.totalPage
     })
 
-    console.log(formatPersonList)
+    // console.log(formatPersonList)
     formatPersonList.map(v => {
       
       yAxisTxt.push(v.name)
