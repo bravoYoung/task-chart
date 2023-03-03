@@ -199,7 +199,7 @@ export default class PersonCompareChartCanvas extends Component {
       ],
       grid: [
         {
-          top: '80',
+          top: '100',
           width: '85%',
           // bottom: 80,
           left: 80,

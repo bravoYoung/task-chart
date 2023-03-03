@@ -98,10 +98,10 @@ export default class PersonTaskChart extends Component {
       ],
       grid: [
         {
-          top: '50',
+          top: '100',
           width: '65%',
           bottom: 80,
-          left: 10,
+          left: 80,
           containLabel: true
         },
         {
@@ -112,7 +112,7 @@ export default class PersonTaskChart extends Component {
           containLabel: true
         }
       ],
-      xAxis: [
+      yAxis: [
         {
           type: 'value',
           name: '总卷数',
@@ -165,7 +165,7 @@ export default class PersonTaskChart extends Component {
         //   offset: 40
         // },
       ],
-      yAxis: [
+      xAxis: [
         {
           type: 'category',
           // axisTick: {
@@ -232,7 +232,7 @@ export default class PersonTaskChart extends Component {
               color: '#424242'
             }
           },
-          xAxisIndex: 1,
+          yAxisIndex: 1,
           data: [4562,5684,5264,2356,1248,1652,1548,5684,5264,2356,
           1248,1652,1548,5684,5264,2356,1248,1652,1548,5684,5264,
           2356,1248,1652,1548,5264,2356,1248,1652,1548]

@@ -134,14 +134,14 @@ export default class TplTaskChart extends Component {
       ],
       grid: [
         {
-          top: '50',
+          top: '100',
           width: '85%',
           // bottom: 80,
-          left: 10,
+          left: 80,
           containLabel: true
         }
       ],
-      xAxis: [
+      yAxis: [
         {
           type: 'value',
           name: '总卷数',
@@ -178,7 +178,7 @@ export default class TplTaskChart extends Component {
           position: 'top'
         }
       ],
-      yAxis: [
+      xAxis: [
         {
           type: 'category',
           data: this.state.yAxisTxt,
@@ -230,7 +230,7 @@ export default class TplTaskChart extends Component {
               color: '#424242'
             }
           },
-          xAxisIndex: 1,
+          yAxisIndex: 1,
           data: this.state.totalPage
         },
       ]
