@@ -2253,24 +2253,53 @@ let chartData = {
       "杜立飞": {
         "pb": {
           "1day": {
-            "totalAmount": 30,
-            "returnAmount": 3,
-            "totalPage": 2352
+            "totalAmount": 43,
+            "returnAmount": 4,
+            "totalPage": 2076
           },
           "31days": {
-            "totalAmount": 319,
-            "returnAmount": 26,
-            "totalPage": 24066
+            "totalAmount": 746,
+            "returnAmount": 136,
+            "totalPage": 37557
           },
           "6months": {
-            "totalAmount": 2873,
-            "returnAmount": 355,
-            "totalPage": 172102
+            "totalAmount": 3333,
+            "returnAmount": 434,
+            "totalPage": 198075
           },
           "1year": {
             "totalAmount": 3306,
             "returnAmount": 429,
             "totalPage": 196504
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 4,
+            "returnAmount": 0,
+            "totalPage": 269
+          },
+          "1year": {
+            "totalAmount": 4,
+            "returnAmount": 0,
+            "totalPage": 269
+          }
+        },
+        "zj": {
+          "31days": {
+            "totalAmount": 188,
+            "returnAmount": 33,
+            "totalPage": 10041
+          },
+          "6months": {
+            "totalAmount": 188,
+            "returnAmount": 33,
+            "totalPage": 10042
+          },
+          "1year": {
+            "totalAmount": 188,
+            "returnAmount": 33,
+            "totalPage": 10042
           }
         }
       }
@@ -2279,24 +2308,24 @@ let chartData = {
       "刘汶": {
         "pb": {
           "1day": {
-            "totalAmount": 27,
-            "returnAmount": 3,
-            "totalPage": 1769
+            "totalAmount": 28,
+            "returnAmount": 8,
+            "totalPage": 1270
           },
           "31days": {
-            "totalAmount": 268,
-            "returnAmount": 44,
-            "totalPage": 19690
+            "totalAmount": 1050,
+            "returnAmount": 209,
+            "totalPage": 50859
           },
           "6months": {
-            "totalAmount": 2478,
-            "returnAmount": 577,
-            "totalPage": 138598
+            "totalAmount": 2651,
+            "returnAmount": 567,
+            "totalPage": 148212
           },
           "1year": {
-            "totalAmount": 3685,
-            "returnAmount": 600,
-            "totalPage": 142574
+            "totalAmount": 2651,
+            "returnAmount": 567,
+            "totalPage": 148212
           }
         }
       }
@@ -2315,14 +2344,14 @@ let chartData = {
             "totalPage": 20211
           },
           "6months": {
-            "totalAmount": 2205,
-            "returnAmount": 444,
-            "totalPage": 120805
+            "totalAmount": 2416,
+            "returnAmount": 503,
+            "totalPage": 133208
           },
           "1year": {
-            "totalAmount": 2562,
-            "returnAmount": 453,
-            "totalPage": 185242
+            "totalAmount": 2416,
+            "returnAmount": 503,
+            "totalPage": 133208
           }
         }
       }
@@ -2331,24 +2360,24 @@ let chartData = {
       "黄观豪": {
         "pb": {
           "1day": {
-            "totalAmount": 18,
-            "returnAmount": 0,
-            "totalPage": 1343
+            "totalAmount": 22,
+            "returnAmount": 1,
+            "totalPage": 1187
           },
           "31days": {
-            "totalAmount": 298,
-            "returnAmount": 15,
-            "totalPage": 21099
+            "totalAmount": 663,
+            "returnAmount": 65,
+            "totalPage": 33416
           },
           "6months": {
-            "totalAmount": 2086,
-            "returnAmount": 218,
-            "totalPage": 115977
+            "totalAmount": 2268,
+            "returnAmount": 233,
+            "totalPage": 125769
           },
           "1year": {
-            "totalAmount": 2856,
-            "returnAmount": 354,
-            "totalPage": 135647
+            "totalAmount": 2268,
+            "returnAmount": 233,
+            "totalPage": 125769
           }
         }
       }
@@ -2357,30 +2386,30 @@ let chartData = {
       "熊欣壮": {
         "pb": {
           "1day": {
-            "totalAmount": 28,
-            "returnAmount": 1,
-            "totalPage": 1946
+            "totalAmount": 29,
+            "returnAmount": 4,
+            "totalPage": 1470
           },
           "31days": {
-            "totalAmount": 253,
-            "returnAmount": 63,
-            "totalPage": 17222
+            "totalAmount": 758,
+            "returnAmount": 168,
+            "totalPage": 37631
           },
           "6months": {
-            "totalAmount": 2368,
-            "returnAmount": 516,
-            "totalPage": 127890
+            "totalAmount": 2547,
+            "returnAmount": 552,
+            "totalPage": 137765
           },
           "1year": {
-            "totalAmount": 3056,
-            "returnAmount": 625,
-            "totalPage": 172545
+            "totalAmount": 2547,
+            "returnAmount": 552,
+            "totalPage": 137765
           }
         }
       }
     },
     {
-      "杨浩荣": {
+      "杨浩荣(离职)": {
         "pb": {
           "1day": {
             "totalAmount": 19,
@@ -2393,14 +2422,142 @@ let chartData = {
             "totalPage": 15637
           },
           "6months": {
-            "totalAmount": 887,
-            "returnAmount": 172,
-            "totalPage": 49872
+            "totalAmount": 877,
+            "returnAmount": 182,
+            "totalPage": 48948
           },
           "1year": {
-            "totalAmount": 1887,
-            "returnAmount": 272,
-            "totalPage": 69872
+            "totalAmount": 877,
+            "returnAmount": 182,
+            "totalPage": 48948
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 416,
+            "returnAmount": 82,
+            "totalPage": 22158
+          },
+          "1year": {
+            "totalAmount": 416,
+            "returnAmount": 82,
+            "totalPage": 22158
+          }
+        }
+      }
+    },
+    {
+      "邱晓雯": {
+        "pb": {
+          "1day": {
+            "totalAmount": 36,
+            "returnAmount": 0,
+            "totalPage": 1600
+          },
+          "31days": {
+            "totalAmount": 424,
+            "returnAmount": 45,
+            "totalPage": 25521
+          },
+          "6months": {
+            "totalAmount": 1332,
+            "returnAmount": 197,
+            "totalPage": 72978
+          },
+          "1year": {
+            "totalAmount": 1332,
+            "returnAmount": 197,
+            "totalPage": 72978
+          }
+        }
+      }
+    },
+    {
+      "林志鑫": {
+        "pb": {
+          "1day": {
+            "totalAmount": 42,
+            "returnAmount": 1,
+            "totalPage": 1642
+          },
+          "31days": {
+            "totalAmount": 453,
+            "returnAmount": 104,
+            "totalPage": 23819
+          },
+          "6months": {
+            "totalAmount": 1390,
+            "returnAmount": 353,
+            "totalPage": 78447
+          },
+          "1year": {
+            "totalAmount": 1390,
+            "returnAmount": 353,
+            "totalPage": 78447
+          }
+        }
+      }
+    },
+    {
+      "翟倩梅": {
+        "pb": {
+          "1day": {
+            "totalAmount": 16,
+            "returnAmount": 2,
+            "totalPage": 1182
+          },
+          "31days": {
+            "totalAmount": 322,
+            "returnAmount": 22,
+            "totalPage": 18943
+          },
+          "6months": {
+            "totalAmount": 1123,
+            "returnAmount": 127,
+            "totalPage": 63105
+          },
+          "1year": {
+            "totalAmount": 1123,
+            "returnAmount": 127,
+            "totalPage": 63105
+          }
+        }
+      }
+    },
+    {
+      "谢乐群": {
+        "pb": {
+          "1day": {
+            "totalAmount": 43,
+            "returnAmount": 5,
+            "totalPage": 3113
+          },
+          "31days": {
+            "totalAmount": 931,
+            "returnAmount": 169,
+            "totalPage": 48653
+          },
+          "6months": {
+            "totalAmount": 3146,
+            "returnAmount": 519,
+            "totalPage": 172717
+          },
+          "1year": {
+            "totalAmount": 3146,
+            "returnAmount": 519,
+            "totalPage": 172717
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 7,
+            "returnAmount": 0,
+            "totalPage": 313
+          },
+          "1year": {
+            "totalAmount": 7,
+            "returnAmount": 0,
+            "totalPage": 313
           }
         }
       }
@@ -2409,50 +2566,62 @@ let chartData = {
       "彭瑞玉": {
         "pt": {
           "1day": {
-            "totalAmount": 65,
-            "returnAmount": 8,
-            "totalPage": 2623 
+            "totalAmount": 47,
+            "returnAmount": 3,
+            "totalPage": 1838 
           },
           "31days": {
-            "totalAmount": 517,
-            "returnAmount": 65,
-            "totalPage": 31122
+            "totalAmount": 869,
+            "returnAmount": 172,
+            "totalPage": 45150
           },
           "6months": {
-            "totalAmount": 2754,
-            "returnAmount": 453,
-            "totalPage": 154947
+            "totalAmount": 3040,
+            "returnAmount": 524,
+            "totalPage": 169772
           },
           "1year": {
-            "totalAmount": 3754,
-            "returnAmount": 1453,
-            "totalPage": 184947
+            "totalAmount": 3040,
+            "returnAmount": 524,
+            "totalPage": 169772
           }
         }
       }
     },
     {
       "刘杏怡": {
+        "pb": {
+          "6months": {
+            "totalAmount": 194,
+            "returnAmount": 6,
+            "totalPage": 10367
+          },
+          "1year": {
+            "totalAmount": 194,
+            "returnAmount": 6,
+            "totalPage": 10367
+          }
+        },
         "pt": {
           "1day": {
-            "totalAmount": 73,
-            "returnAmount": 2,
-            "totalPage": 3164
+            "totalAmount": 72,
+            "returnAmount": 3,
+            "totalPage": 2846
           },
           "31days": {
-            "totalAmount": 504,
-            "returnAmount": 33,
-            "totalPage": 32761
+            "totalAmount": 1094,
+            "returnAmount": 144,
+            "totalPage": 56183
           },
           "6months": {
-            "totalAmount": 2806,
-            "returnAmount": 440,
-            "totalPage": 157932
+            "totalAmount": 3120,
+            "returnAmount": 527,
+            "totalPage": 176468
           },
           "1year": {
             "totalAmount": 3806,
             "returnAmount": 640,
-            "totalPage": 197932
+            "totalPage": 176468
           }
         }
       }
@@ -2461,66 +2630,90 @@ let chartData = {
       "郭晓璇": {
         "pt": {
           "1day": {
-            "totalAmount": 27,
-            "returnAmount": 5,
-            "totalPage": 1827
+            "totalAmount": 40,
+            "returnAmount": 0,
+            "totalPage": 1566
           },
           "31days": {
-            "totalAmount": 351,
-            "returnAmount": 56,
-            "totalPage": 22605
+            "totalAmount": 688,
+            "returnAmount": 79,
+            "totalPage": 35938
           },
           "6months": {
-            "totalAmount": 2169,
-            "returnAmount": 345,
-            "totalPage": 125335
+            "totalAmount": 2213,
+            "returnAmount": 373,
+            "totalPage": 126212
           },
           "1year": {
-            "totalAmount": 3169,
-            "returnAmount": 445,
-            "totalPage": 155335
+            "totalAmount": 2213,
+            "returnAmount": 373,
+            "totalPage": 126212
           }
         }
       }
     },
     {
       "周少玉": {
-        "pt": {
-          "1day": {
-            "totalAmount": 50,
-            "returnAmount": 2,
-            "totalPage": 2009
-          },
-          "31days": {
-            "totalAmount": 361,
-            "returnAmount": 41,
-            "totalPage": 21498
-          },
+        "pb": {
           "6months": {
-            "totalAmount": 2414,
-            "returnAmount": 465,
-            "totalPage": 147907
+            "totalAmount": 7,
+            "returnAmount": 0,
+            "totalPage": 374
           },
           "1year": {
-            "totalAmount": 2414,
-            "returnAmount": 465,
-            "totalPage": 147907
+            "totalAmount": 7,
+            "returnAmount": 0,
+            "totalPage": 374
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 29,
+            "returnAmount": 1,
+            "totalPage": 1654
+          },
+          "31days": {
+            "totalAmount": 778,
+            "returnAmount": 121,
+            "totalPage": 41342
+          },
+          "6months": {
+            "totalAmount": 2765,
+            "returnAmount": 496,
+            "totalPage": 154694
+          },
+          "1year": {
+            "totalAmount": 2765,
+            "returnAmount": 496,
+            "totalPage": 154694
           }
         }
       }
     },
     {
       "张宁": {
-        "pt": {
+        "pb": {
           "1day": {
-            "totalAmount": 49,
-            "returnAmount": 0,
-            "totalPage": 2505
+            "totalAmount": -1,
+            "returnAmount": 1,
+            "totalPage": -54
           },
           "31days": {
-            "totalAmount": 238,
-            "returnAmount": 58,
-            "totalPage": 13741
+            "totalAmount": 85,
+            "returnAmount": 3,
+            "totalPage": 4234
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 34,
+            "returnAmount": 8,
+            "totalPage": 2130
+          },
+          "31days": {
+            "totalAmount": 716,
+            "returnAmount": 117,
+            "totalPage": 37856
           },
           "6months": {
             "totalAmount": 2036,
@@ -2537,42 +2730,95 @@ let chartData = {
     },
     {
       "李金渝": {
-        "zj": {
-          "1day": {
-            "totalAmount": 46,
-            "returnAmount": 4,
-            "totalPage": 2655
-          },
-          "31days": {
-            "totalAmount": 429,
-            "returnAmount": 40,
-            "totalPage": 27297
-          },
+        "pb": {
           "6months": {
-            "totalAmount": 3070,
-            "returnAmount": 376,
-            "totalPage": 182798
+            "totalAmount": 34,
+            "returnAmount": 12,
+            "totalPage": 1350
           },
           "1year": {
-            "totalAmount": 3070,
-            "returnAmount": 376,
-            "totalPage": 182798
+            "totalAmount": 34,
+            "returnAmount": 12,
+            "totalPage": 1350
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 35,
+            "returnAmount": 16,
+            "totalPage": 2421
+          },
+          "1year": {
+            "totalAmount": 35,
+            "returnAmount": 16,
+            "totalPage": 2421
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 34,
+            "returnAmount": 10,
+            "totalPage": 2292
+          },
+          "31days": {
+            "totalAmount": 907,
+            "returnAmount": 93,
+            "totalPage": 51644
+          },
+          "6months": {
+            "totalAmount": 3440,
+            "returnAmount": 430,
+            "totalPage": 204555
+          },
+          "1year": {
+            "totalAmount": 3440,
+            "returnAmount": 430,
+            "totalPage": 204555
           }
         }
       }
     },
     {
       "赵东鸿": {
+        "pb": {
+          "6months": {
+            "totalAmount": 414,
+            "returnAmount": 105,
+            "totalPage": 21360
+          },
+          "1year": {
+            "totalAmount": 404,
+            "returnAmount": 105,
+            "totalPage": 21360
+          }
+        },
+        "pt": {
+          "31days": {
+            "totalAmount": 7,
+            "returnAmount": 0,
+            "totalPage": 556
+          },
+          "6months": {
+            "totalAmount": 13,
+            "returnAmount": 0,
+            "totalPage": 955
+          },
+          "1year": {
+            "totalAmount": 13,
+            "returnAmount": 0,
+            "totalPage": 955
+          }
+        },
         "zj": {
           "1day": {
-            "totalAmount": 48,
-            "returnAmount": 1,
-            "totalPage": 2706
+            "totalAmount": 45,
+            "returnAmount": 3,
+            "totalPage": 2739
           },
           "31days": {
-            "totalAmount": 521,
-            "returnAmount": 53,
-            "totalPage": 33841
+            "totalAmount": 957,
+            "returnAmount": 71,
+            "totalPage": 52098
           },
           "6months": {
             "totalAmount": 2938,
@@ -2589,16 +2835,45 @@ let chartData = {
     },
     {
       "吴伟林": {
+        "pb": {
+          "31days": {
+            "totalAmount": 117,
+            "returnAmount": 7,
+            "totalPage": 6437
+          },
+          "6months": {
+            "totalAmount": 360,
+            "returnAmount": 51,
+            "totalPage": 21328
+          },
+          "1year": {
+            "totalAmount": 360,
+            "returnAmount": 51,
+            "totalPage": 21328
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 17,
+            "returnAmount": 0,
+            "totalPage": 960
+          },
+          "1year": {
+            "totalAmount": 17,
+            "returnAmount": 0,
+            "totalPage": 960
+          }
+        },
         "zj": {
           "1day": {
-            "totalAmount": 42,
-            "returnAmount": 1,
-            "totalPage": 2502
+            "totalAmount": 44,
+            "returnAmount": 0,
+            "totalPage": 2667
           },
           "31days": {
-            "totalAmount": 481,
-            "returnAmount": 73,
-            "totalPage": 31112
+            "totalAmount": 742,
+            "returnAmount": 77,
+            "totalPage": 41433
           },
           "6months": {
             "totalAmount": 2929,
@@ -2615,42 +2890,195 @@ let chartData = {
     },
     {
       "沈泽鹏": {
-        "zj": {
-          "1day": {
-            "totalAmount": 47,
-            "returnAmount": 1,
-            "totalPage": 2517
-          },
+        "pb": {
           "31days": {
-            "totalAmount": 519,
-            "returnAmount": 42,
-            "totalPage": 33048
+            "totalAmount": 140,
+            "returnAmount": 3,
+            "totalPage": 7752
           },
           "6months": {
-            "totalAmount": 3494,
-            "returnAmount": 437,
-            "totalPage": 202448
+            "totalAmount": 702,
+            "returnAmount": 154,
+            "totalPage": 38413
           },
           "1year": {
-            "totalAmount": 3494,
-            "returnAmount": 437,
-            "totalPage": 202448
+            "totalAmount": 702,
+            "returnAmount": 154,
+            "totalPage": 38413
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 2,
+            "returnAmount": 0,
+            "totalPage": 272
+          },
+          "1year": {
+            "totalAmount": 2,
+            "returnAmount": 0,
+            "totalPage": 272
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 51,
+            "returnAmount": 7,
+            "totalPage": 2736
+          },
+          "31days": {
+            "totalAmount": 595,
+            "returnAmount": 42,
+            "totalPage": 32822
+          },
+          "6months": {
+            "totalAmount": 2974,
+            "returnAmount": 285,
+            "totalPage": 173956
+          },
+          "1year": {
+            "totalAmount": 2974,
+            "returnAmount": 285,
+            "totalPage": 173956
           }
         }
       }
     },
     {
       "吴妙贤": {
+        "pb": {
+          "6months": {
+            "totalAmount": 277,
+            "returnAmount": 21,
+            "totalPage": 18471
+          },
+          "1year": {
+            "totalAmount": 277,
+            "returnAmount": 21,
+            "totalPage": 18471
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 101,
+            "returnAmount": 16,
+            "totalPage": 5416
+          },
+          "1year": {
+            "totalAmount": 101,
+            "returnAmount": 16,
+            "totalPage": 5416
+          }
+        },
         "zj": {
           "1day": {
-            "totalAmount": 47,
-            "returnAmount": 0,
-            "totalPage": 2721
+            "totalAmount": 37,
+            "returnAmount": 6,
+            "totalPage": 1977
           },
           "31days": {
-            "totalAmount": 479,
-            "returnAmount": 31,
-            "totalPage": 31546
+            "totalAmount": 1007,
+            "returnAmount": 130,
+            "totalPage": 54520
+          },
+          "6months": {
+            "totalAmount": 3450,
+            "returnAmount": 568,
+            "totalPage": 200919
+          },
+          "1year": {
+            "totalAmount": 3450,
+            "returnAmount": 568,
+            "totalPage": 200919
+          }
+        }
+      }
+    },
+    {
+      "周瑾": {
+        "pb": {
+          "6months": {
+            "totalAmount": 580,
+            "returnAmount": 73,
+            "totalPage": 35360
+          },
+          "1year": {
+            "totalAmount": 580,
+            "returnAmount": 73,
+            "totalPage": 35360
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 58,
+            "returnAmount": 17,
+            "totalPage": 2576
+          },
+          "1year": {
+            "totalAmount": 58,
+            "returnAmount": 17,
+            "totalPage": 2576
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 30,
+            "returnAmount": 3,
+            "totalPage": 1848
+          },
+          "31days": {
+            "totalAmount": 663,
+            "returnAmount": 88,
+            "totalPage": 38009
+          },
+          "6months": {
+            "totalAmount": 2025,
+            "returnAmount": 364,
+            "totalPage": 118294
+          },
+          "1year": {
+            "totalAmount": 2025,
+            "returnAmount": 364,
+            "totalPage": 118294
+          }
+        }
+      }
+    },
+    {
+      "李家欣": {
+        "pb": {
+          "6months": {
+            "totalAmount": 420,
+            "returnAmount": 41,
+            "totalPage": 27752
+          },
+          "1year": {
+            "totalAmount": 420,
+            "returnAmount": 41,
+            "totalPage": 27752
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 62,
+            "returnAmount": 23,
+            "totalPage": 2691
+          },
+          "1year": {
+            "totalAmount": 62,
+            "returnAmount": 23,
+            "totalPage": 2691
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 28,
+            "returnAmount": 8,
+            "totalPage": 1846
+          },
+          "31days": {
+            "totalAmount": 934,
+            "returnAmount": 105,
+            "totalPage": 53068
           },
           "6months": {
             "totalAmount": 3099,
@@ -2661,6 +3089,691 @@ let chartData = {
             "totalAmount": 3099,
             "returnAmount": 506,
             "totalPage": 183181
+          }
+        }
+      }
+    },
+    {
+      "黄沛琼": {
+        "pb": {
+          "31days": {
+            "totalAmount": 106,
+            "returnAmount": 0,
+            "totalPage": 5806
+          },
+          "6months": {
+            "totalAmount": 666,
+            "returnAmount": 62,
+            "totalPage": 38581
+          },
+          "1year": {
+            "totalAmount": 666,
+            "returnAmount": 62,
+            "totalPage": 38581
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 32,
+            "returnAmount": 4,
+            "totalPage": 1702
+          },
+          "31days": {
+            "totalAmount": 698,
+            "returnAmount": 102,
+            "totalPage": 35848
+          },
+          "6months": {
+            "totalAmount": 943,
+            "returnAmount": 133,
+            "totalPage": 49000
+          },
+          "1year": {
+            "totalAmount": 943,
+            "returnAmount": 133,
+            "totalPage": 49000
+          }
+        },
+        "zj": {
+          "6months": {
+            "totalAmount": 791,
+            "returnAmount": 203,
+            "totalPage": 48661
+          },
+          "1year": {
+            "totalAmount": 791,
+            "returnAmount": 203,
+            "totalPage": 48661
+          }
+        }
+      }
+    },
+    {
+      "黄均佑": {
+        "pb": {
+          "31days": {
+            "totalAmount": 173,
+            "returnAmount": 7,
+            "totalPage": 9510
+          },
+          "6months": {
+            "totalAmount": 784,
+            "returnAmount": 154,
+            "totalPage": 43152
+          },
+          "1year": {
+            "totalAmount": 784,
+            "returnAmount": 154,
+            "totalPage": 43152
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 26,
+            "returnAmount": 3,
+            "totalPage": 1023
+          },
+          "31days": {
+            "totalAmount": 283,
+            "returnAmount": 57,
+            "totalPage": 14354
+          },
+          "6months": {
+            "totalAmount": 496,
+            "returnAmount": 91,
+            "totalPage": 25599
+          },
+          "1year": {
+            "totalAmount": 3099,
+            "returnAmount": 506,
+            "totalPage": 183181
+          }
+        }
+      }
+    },
+    {
+      "余萍": {
+        "pt": {
+          "1day": {
+            "totalAmount": 36,
+            "returnAmount": 1,
+            "totalPage": 1730
+          },
+          "31days": {
+            "totalAmount": 968,
+            "returnAmount": 124,
+            "totalPage": 51761
+          },
+          "6months": {
+            "totalAmount": 3093,
+            "returnAmount": 512,
+            "totalPage": 174380
+          },
+          "1year": {
+            "totalAmount": 3093,
+            "returnAmount": 512,
+            "totalPage": 174380
+          }
+        }
+      }
+    },
+    {
+      "黄懿": {
+        "pt": {
+          "1day": {
+            "totalAmount": 56,
+            "returnAmount": 2,
+            "totalPage": 2519
+          },
+          "31days": {
+            "totalAmount": 488,
+            "returnAmount": 70,
+            "totalPage": 23918
+          },
+          "6months": {
+            "totalAmount": 2551,
+            "returnAmount": 418,
+            "totalPage": 142536
+          },
+          "1year": {
+            "totalAmount": 2551,
+            "returnAmount": 418,
+            "totalPage": 142536
+          }
+        },
+        "zj": {
+          "31days": {
+            "totalAmount": 154,
+            "returnAmount": 21,
+            "totalPage": 7762
+          },
+          "6months": {
+            "totalAmount": 198,
+            "returnAmount": 25,
+            "totalPage": 10220
+          },
+          "1year": {
+            "totalAmount": 198,
+            "returnAmount": 25,
+            "totalPage": 10220
+          }
+        }
+      }
+    },
+    {
+      "张靖": {
+        "pb": {
+          "6months": {
+            "totalAmount": 441,
+            "returnAmount": 99,
+            "totalPage": 23074
+          },
+          "1year": {
+            "totalAmount": 441,
+            "returnAmount": 99,
+            "totalPage": 23074
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 20,
+            "returnAmount": 7,
+            "totalPage": 649
+          },
+          "31days": {
+            "totalAmount": 500,
+            "returnAmount": 79,
+            "totalPage": 24825
+          },
+          "6months": {
+            "totalAmount": 1483,
+            "returnAmount": 284,
+            "totalPage": 80572
+          },
+          "1year": {
+            "totalAmount": 1483,
+            "returnAmount": 284,
+            "totalPage": 80572
+          }
+        }
+      }
+    },
+    {
+      "蒋格琳": {
+        "pt": {
+          "1day": {
+            "totalAmount": 29,
+            "returnAmount": 3,
+            "totalPage": 996
+          },
+          "31days": {
+            "totalAmount": 675,
+            "returnAmount": 95,
+            "totalPage": 35066
+          },
+          "6months": {
+            "totalAmount": 2492,
+            "returnAmount": 453,
+            "totalPage": 140351
+          },
+          "1year": {
+            "totalAmount": 2492,
+            "returnAmount": 453,
+            "totalPage": 140351
+          }
+        }
+      }
+    },
+    {
+      "麦文阳": {
+        "pb": {
+          "6months": {
+            "totalAmount": 174,
+            "returnAmount": 22,
+            "totalPage": 9770
+          },
+          "1year": {
+            "totalAmount": 174,
+            "returnAmount": 22,
+            "totalPage": 9770
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 26,
+            "returnAmount": 9,
+            "totalPage": 1775
+          },
+          "1year": {
+            "totalAmount": 26,
+            "returnAmount": 9,
+            "totalPage": 1775
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 38,
+            "returnAmount": 1,
+            "totalPage": 2011
+          },
+          "31days": {
+            "totalAmount": 1069,
+            "returnAmount": 63,
+            "totalPage": 56046
+          },
+          "6months": {
+            "totalAmount": 4305,
+            "returnAmount": 403,
+            "totalPage": 242816
+          },
+          "1year": {
+            "totalAmount": 4305,
+            "returnAmount": 403,
+            "totalPage": 242816
+          }
+        }
+      }
+    },
+    {
+      "陈星": {
+        "pt": {
+          "1day": {
+            "totalAmount": 33,
+            "returnAmount": 3,
+            "totalPage": 1219
+          },
+          "31days": {
+            "totalAmount": 282,
+            "returnAmount": 32,
+            "totalPage": 14289
+          },
+          "6months": {
+            "totalAmount": 819,
+            "returnAmount": 16,
+            "totalPage": 44543
+          },
+          "1year": {
+            "totalAmount": 819,
+            "returnAmount": 16,
+            "totalPage": 44543
+          }
+        },
+        "zj": {
+          "31days": {
+            "totalAmount": 1751,
+            "returnAmount": 302,
+            "totalPage": 14385
+          },
+          "6months": {
+            "totalAmount": 1751,
+            "returnAmount": 302,
+            "totalPage": 108802
+          },
+          "1year": {
+            "totalAmount": 3099,
+            "returnAmount": 506,
+            "totalPage": 108802
+          }
+
+        }
+      }
+    },
+    {
+      "李碧秋": {
+        "pb": {
+          "6months": {
+            "totalAmount": 7,
+            "returnAmount": 1,
+            "totalPage": 514
+          },
+          "1year": {
+            "totalAmount": 7,
+            "returnAmount": 1,
+            "totalPage": 514
+          }
+        },
+        "pt": {
+          "6months": {
+            "totalAmount": 41,
+            "returnAmount": 7,
+            "totalPage": 3206
+          },
+          "1year": {
+            "totalAmount": 41,
+            "returnAmount": 7,
+            "totalPage": 3206
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 28,
+            "returnAmount": 2,
+            "totalPage": 1400
+          },
+          "31days": {
+            "totalAmount": 1055,
+            "returnAmount": 107,
+            "totalPage": 58220
+          },
+          "6months": {
+            "totalAmount": 3775,
+            "returnAmount": 421,
+            "totalPage": 224027
+          },
+          "1year": {
+            "totalAmount": 3775,
+            "returnAmount": 421,
+            "totalPage": 224027
+          }
+        }
+      }
+    },
+    {
+      "喻欣然": {
+        "pt": {
+          "1day": {
+            "totalAmount": 36,
+            "returnAmount": 4,
+            "totalPage": 1682
+          },
+          "31days": {
+            "totalAmount": 272,
+            "returnAmount": 61,
+            "totalPage": 14196
+          },
+          "6months": {
+            "totalAmount": 1810,
+            "returnAmount": 348,
+            "totalPage": 109203
+          },
+          "1year": {
+            "totalAmount": 1810,
+            "returnAmount": 348,
+            "totalPage": 109203
+          }
+        },
+        "zj": {
+          "31days": {
+            "totalAmount": 266,
+            "returnAmount": 39,
+            "totalPage": 13474
+          },
+          "6months": {
+            "totalAmount": 663,
+            "returnAmount": 83,
+            "totalPage": 37835
+          },
+          "1year": {
+            "totalAmount": 663,
+            "returnAmount": 83,
+            "totalPage": 37835
+          }
+
+        }
+      }
+    },
+    {
+      "陈琦琳": {
+        "pt": {
+          "6months": {
+            "totalAmount": 766,
+            "returnAmount": 165,
+            "totalPage": 45013
+          },
+          "1year": {
+            "totalAmount": 766,
+            "returnAmount": 165,
+            "totalPage": 45013
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 19,
+            "returnAmount": 3,
+            "totalPage": 1046
+          },
+          "31days": {
+            "totalAmount": 500,
+            "returnAmount": 83,
+            "totalPage": 27409
+          },
+          "6months": {
+            "totalAmount": 1130,
+            "returnAmount": 187,
+            "totalPage": 62890
+          },
+          "1year": {
+            "totalAmount": 1130,
+            "returnAmount": 187,
+            "totalPage": 62890
+          }
+        }
+      }
+    },
+    {
+      "赖子洋": {
+        "pb": {
+          "1day": {
+            "totalAmount": -2,
+            "returnAmount": 2,
+            "totalPage": -101
+          },
+          "31days": {
+            "totalAmount": 26,
+            "returnAmount": 23,
+            "totalPage": 1348
+          },
+          "6months": {
+            "totalAmount": 434,
+            "returnAmount": 110,
+            "totalPage": 27417
+          },
+          "1year": {
+            "totalAmount": 434,
+            "returnAmount": 110,
+            "totalPage": 27417
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 34,
+            "returnAmount": 0,
+            "totalPage": 1492
+          },
+          "31days": {
+            "totalAmount": 486,
+            "returnAmount": 47,
+            "totalPage": 24046
+          },
+          "6months": {
+            "totalAmount": 1328,
+            "returnAmount": 207,
+            "totalPage": 74258
+          },
+          "1year": {
+            "totalAmount": 1328,
+            "returnAmount": 207,
+            "totalPage": 74258
+          }
+        }
+      }
+    },
+    {
+      "廖召顺": {
+        "pb": {
+          "1day": {
+            "totalAmount": 48,
+            "returnAmount": 4,
+            "totalPage": 1990
+          },
+          "31days": {
+            "totalAmount": 309,
+            "returnAmount": 70,
+            "totalPage": 16529
+          },
+          "6months": {
+            "totalAmount": 2039,
+            "returnAmount": 298,
+            "totalPage": 111843
+          },
+          "1year": {
+            "totalAmount": 2039,
+            "returnAmount": 298,
+            "totalPage": 111843
+          }
+        },
+        "pt": {
+          "31days": {
+            "totalAmount": 28,
+            "returnAmount": 4,
+            "totalPage": 1598
+          },
+          "6months": {
+            "totalAmount": 46,
+            "returnAmount": 7,
+            "totalPage": 3135
+          },
+          "1year": {
+            "totalAmount": 7,
+            "returnAmount": 46,
+            "totalPage": 3135
+          }
+        },
+        "zj": {
+          "31days": {
+            "totalAmount": 56,
+            "returnAmount": 15,
+            "totalPage": 4489
+          },
+          "6months": {
+            "totalAmount": 184,
+            "returnAmount": 39,
+            "totalPage": 11685
+          },
+          "1year": {
+            "totalAmount": 184,
+            "returnAmount": 79,
+            "totalPage": 11685
+          }
+        }
+      }
+    },
+    {
+      "黄美妍": {
+        "pb": {
+          "31days": {
+            "totalAmount": 63,
+            "returnAmount": 7,
+            "totalPage": 3710
+          },
+          "6months": {
+            "totalAmount": 839,
+            "returnAmount": 68,
+            "totalPage": 61635
+          },
+          "1year": {
+            "totalAmount": 839,
+            "returnAmount": 68,
+            "totalPage": 61635
+          }
+        },
+        "pt": {
+          "31days": {
+            "totalAmount": 27,
+            "returnAmount": 1,
+            "totalPage": 2133
+          },
+          "6months": {
+            "totalAmount": 242,
+            "returnAmount": 5,
+            "totalPage": 19421
+          },
+          "1year": {
+            "totalAmount": 242,
+            "returnAmount": 5,
+            "totalPage": 19421
+          }
+        },
+        "zj": {
+          "1day": {
+            "totalAmount": 8,
+            "returnAmount": 4,
+            "totalPage": 498
+          },
+          "31days": {
+            "totalAmount": 428,
+            "returnAmount": 39,
+            "totalPage": 26153
+          },
+          "6months": {
+            "totalAmount": 1379,
+            "returnAmount": 283,
+            "totalPage": 82970
+          },
+          "1year": {
+            "totalAmount": 1379,
+            "returnAmount": 283,
+            "totalPage": 82970
+          }
+        }
+      }
+    },
+    {
+      "洪金涛": {
+        "pb": {
+          "31days": {
+            "totalAmount": 8,
+            "returnAmount": 6,
+            "totalPage": 301
+          },
+          "6months": {
+            "totalAmount": 264,
+            "returnAmount": 40,
+            "totalPage": 14418
+          },
+          "1year": {
+            "totalAmount": 264,
+            "returnAmount": 40,
+            "totalPage": 14418
+          }
+        },
+        "pt": {
+          "1day": {
+            "totalAmount": 15,
+            "returnAmount": 1,
+            "totalPage": 865
+          },
+          "31days": {
+            "totalAmount": 131,
+            "returnAmount": 31,
+            "totalPage": 6673
+          },
+          "6months": {
+            "totalAmount": 293,
+            "returnAmount": 69,
+            "totalPage": 16351
+          },
+          "1year": {
+            "totalAmount": 293,
+            "returnAmount": 69,
+            "totalPage": 16351
+          }
+        },
+        "zj": {
+          "31days": {
+            "totalAmount": 39,
+            "returnAmount": 1,
+            "totalPage": 1
+          },
+          "6months": {
+            "totalAmount": 806,
+            "returnAmount": 139,
+            "totalPage": 45301
+          },
+          "1year": {
+            "totalAmount": 806,
+            "returnAmount": 139,
+            "totalPage": 45301
           }
         }
       }
@@ -2669,636 +3782,3 @@ let chartData = {
 }
 export default chartData
 
-
-// let tplChart = {
-//   "pb": [
-//     {
-//       "date": "2023-01-03",
-//       "totalAmount": 81,
-//       "returnAmount": 22,
-//       "totalPage": 6908
-//     },
-//     {
-//       "date": "2023-01-04",
-//       "totalAmount": 474,
-//       "returnAmount": 74,
-//       "totalPage": 34214
-//     },
-//     {
-//       "date": "2023-01-05",
-//       "totalAmount": 307,
-//       "returnAmount": 29,
-//       "totalPage": 23069
-//     },
-//     {
-//       "date": "2023-01-06",
-//       "totalAmount": 318,
-//       "returnAmount": 44,
-//       "totalPage": 21000
-//     },
-//     {
-//       "date": "2023-01-09",
-//       "totalAmount": 356,
-//       "returnAmount": 40,
-//       "totalPage": 25929
-//     },
-//     {
-//       "date": "2023-01-10",
-//       "totalAmount": 382,
-//       "returnAmount": 24,
-//       "totalPage": 23033
-//     },
-//     {
-//       "date": "2023-01-11",
-//       "totalAmount": 361,
-//       "returnAmount": 28,
-//       "totalPage": 24115
-//     },
-//     {
-//       "date": "2023-01-12",
-//       "totalAmount": 392,
-//       "returnAmount": 18,
-//       "totalPage": 25885
-//     },
-//     {
-//       "date": "2023-01-13",
-//       "totalAmount": 309,
-//       "returnAmount": 22299,
-//       "totalPage": 16
-//     },
-//     {
-//       "date": "2023-01-16",
-//       "totalAmount": 348,
-//       "returnAmount": 56,
-//       "totalPage": 19917
-//     },
-//     {
-//       "date": "2023-01-17",
-//       "totalAmount": 273,
-//       "returnAmount": 31,
-//       "totalPage": 19165
-//     },
-//     {
-//       "date": "2023-01-18",
-//       "totalAmount": 270,
-//       "returnAmount": 31,
-//       "totalPage": 17183
-//     },
-//     {
-//       "date": "2023-01-19",
-//       "totalAmount": 177,
-//       "returnAmount": 10604,
-//       "totalPage": 46
-//     },
-//     {
-//       "date": "2023-01-20",
-//       "totalAmount": 46,
-//       "returnAmount": 3567,
-//       "totalPage": 3
-//     },
-//     {
-//       "date": "2023-01-28",
-//       "totalAmount": 189,
-//       "returnAmount": 12,
-//       "totalPage": 14264
-//     },
-//     {
-//       "date": "2023-01-29",
-//       "totalAmount": 205,
-//       "returnAmount": 16,
-//       "totalPage": 17287
-//     },
-//     {
-//       "date": "2023-01-30",
-//       "totalAmount": 184,
-//       "returnAmount": 13669,
-//       "totalPage": 65
-//     },
-//     {
-//       "date": "2023-01-31",
-//       "totalAmount": 201,
-//       "returnAmount": 35,
-//       "totalPage": 15359
-//     },
-//     {
-//       "date": "2022-09",
-//       "totalAmount": 4425,
-//       "returnAmount": 1034,
-//       "totalPage": 262386
-//     },
-//     {
-//       "date": "2022-10",
-//       "totalAmount": 6950,
-//       "returnAmount": 1074,
-//       "totalPage": 397288
-//     },
-//     {
-//       "date": "2022-11",
-//       "totalAmount": 9921,
-//       "returnAmount": 1564,
-//       "totalPage": 528983
-//     },
-//     {
-//       "date": "2022-12",
-//       "totalAmount": 7770,
-//       "returnAmount": 774,
-//       "totalPage": 462350
-//     },
-//     {
-//       "date": "2023-01",
-//       "totalAmount": 4873,
-//       "returnAmount": 590,
-//       "totalPage": 337467
-//     },
-//     {
-//       "date": "2023-02",
-//       "totalAmount": 5741,
-//       "returnAmount": 1370,
-//       "totalPage": 342176
-//     },
-//     {
-//       "date": "2022",
-//       "totalAmount": 38232,
-//       "returnAmount": 4446,
-//       "totalPage": 2149680
-//     },
-//     {
-//       "date": "2023",
-//       "totalAmount": 10614,
-//       "returnAmount": 1960,
-//       "totalPage": 679643
-//     }
-//   ],
-//   "pt": [
-//     {
-//       "date": "2023-01-01",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-02",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-03",
-//       "totalAmount": 125,
-//       "returnAmount": 22,
-//       "totalPage": 7942
-//     },
-//     {
-//       "date": "2023-01-04",
-//       "totalAmount": 468,
-//       "returnAmount": 75,
-//       "totalPage": 30127
-//     },
-//     {
-//       "date": "2023-01-05",
-//       "totalAmount": 505,
-//       "returnAmount": 28,
-//       "totalPage": 24748
-//     },
-//     {
-//       "date": "2023-01-06",
-//       "totalAmount": 396,
-//       "returnAmount": 42,
-//       "totalPage": 21232
-//     },
-//     {
-//       "date": "2023-01-07",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-08",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-09",
-//       "totalAmount": 29,
-//       "returnAmount": 4,
-//       "totalPage": 2668
-//     },
-//     {
-//       "date": "2023-01-10",
-//       "totalAmount": 387,
-//       "returnAmount": 24,
-//       "totalPage": 26051
-//     },
-//     {
-//       "date": "2023-01-11",
-//       "totalAmount": 362,
-//       "returnAmount": 28,
-//       "totalPage": 26761
-//     },
-//     {
-//       "date": "2023-01-12",
-//       "totalAmount": 384,
-//       "returnAmount": 17,
-//       "totalPage": 25689
-//     },
-//     {
-//       "date": "2023-01-13",
-//       "totalAmount": 290,
-//       "returnAmount": 21858,
-//       "totalPage": 15
-//     },
-//     {
-//       "date": "2023-01-14",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-15",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-16",
-//       "totalAmount": 282,
-//       "returnAmount": 55,
-//       "totalPage": 16586
-//     },
-//     {
-//       "date": "2023-01-17",
-//       "totalAmount": 239,
-//       "returnAmount": 30,
-//       "totalPage": 15644
-//     },
-//     {
-//       "date": "2023-01-18",
-//       "totalAmount": 230,
-//       "returnAmount": 30,
-//       "totalPage": 16285
-//     },
-//     {
-//       "date": "2023-01-19",
-//       "totalAmount": 177,
-//       "returnAmount": 10604,
-//       "totalPage": 46
-//     },
-//     {
-//       "date": "2023-01-20",
-//       "totalAmount": 82,
-//       "returnAmount": 4869,
-//       "totalPage": 3
-//     },
-//     {
-//       "date": "2023-01-21",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-22",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-23",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-24",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-25",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-26",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-27",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-28",
-//       "totalAmount": 197,
-//       "returnAmount": 12,
-//       "totalPage": 13728
-//     },
-//     {
-//       "date": "2023-01-29",
-//       "totalAmount": 223,
-//       "returnAmount": 16,
-//       "totalPage": 15490
-//     },
-//     {
-//       "date": "2023-01-30",
-//       "totalAmount": 362,
-//       "returnAmount": 19307,
-//       "totalPage": 66
-//     },
-//     {
-//       "date": "2023-01-31",
-//       "totalAmount": 331,
-//       "returnAmount": 35,
-//       "totalPage": 23260
-//     },
-//     {
-//       "date": "2022-09",
-//       "totalAmount": 3866,
-//       "returnAmount": 933,
-//       "totalPage": 230520
-//     },
-//     {
-//       "date": "2022-10",
-//       "totalAmount": 5561,
-//       "returnAmount": 973,
-//       "totalPage": 321128
-//     },
-//     {
-//       "date": "2022-11",
-//       "totalAmount": 11545,
-//       "returnAmount": 1557,
-//       "totalPage": 623068
-//     },
-//     {
-//       "date": "2022-12",
-//       "totalAmount": 6549,
-//       "returnAmount": 770,
-//       "totalPage": 388539
-//     },
-//     {
-//       "date": "2023-01",
-//       "totalAmount": 5427,
-//       "returnAmount": 582,
-//       "totalPage": 352934
-//     },
-//     {
-//       "date": "2023-02",
-//       "totalAmount": 5385,
-//       "returnAmount": 1349,
-//       "totalPage": 358645
-//     },
-//     {
-//       "date": "2022",
-//       "totalAmount": 36413,
-//       "returnAmount": 4301,
-//       "totalPage": 2034226
-//     },
-//     {
-//       "date": "2023",
-//       "totalAmount": 10812,
-//       "returnAmount": 1931,
-//       "totalPage": 711579
-//     }
-//   ],
-//   "zj": [
-//     {
-//       "date": "2023-01-01",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-02",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-03",
-//       "totalAmount": 115,
-//       "returnAmount": 19,
-//       "totalPage": 8010
-//     },
-//     {
-//       "date": "2023-01-04",
-//       "totalAmount": 447,
-//       "returnAmount": 28,
-//       "totalPage": 25455
-//     },
-//     {
-//       "date": "2023-01-05",
-//       "totalAmount": 545,
-//       "returnAmount": 75,
-//       "totalPage": 34730
-//     },
-//     {
-//       "date": "2023-01-06",
-//       "totalAmount": 347,
-//       "returnAmount": 39,
-//       "totalPage": 21825
-//     },
-//     {
-//       "date": "2023-01-07",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-08",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-09",
-//       "totalAmount": 148,
-//       "returnAmount": 38,
-//       "totalPage": 10695
-//     },
-//     {
-//       "date": "2023-01-10",
-//       "totalAmount": 224,
-//       "returnAmount": 24,
-//       "totalPage": 15036
-//     },
-//     {
-//       "date": "2023-01-11",
-//       "totalAmount": 181,
-//       "returnAmount": 27,
-//       "totalPage": 12603
-//     },
-//     {
-//       "date": "2023-01-12",
-//       "totalAmount": 311,
-//       "returnAmount": 17,
-//       "totalPage": 15624
-//     },
-//     {
-//       "date": "2023-01-13",
-//       "totalAmount": 262,
-//       "returnAmount": 14,
-//       "totalPage": 13264
-//     },
-//     {
-//       "date": "2023-01-14",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-15",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-16",
-//       "totalAmount": 248,
-//       "returnAmount": 52,
-//       "totalPage": 11891
-//     },
-//     {
-//       "date": "2023-01-17",
-//       "totalAmount": 202,
-//       "returnAmount": 28,
-//       "totalPage": 11648
-//     },
-//     {
-//       "date": "2023-01-18",
-//       "totalAmount": 174,
-//       "returnAmount": 29,
-//       "totalPage": 13096
-//     },
-//     {
-//       "date": "2023-01-19",
-//       "totalAmount": 106,
-//       "returnAmount": 9632,
-//       "totalPage": 46
-//     },
-//     {
-//       "date": "2023-01-20",
-//       "totalAmount": 66,
-//       "returnAmount": 5469,
-//       "totalPage": 3
-//     },
-//     {
-//       "date": "2023-01-21",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-22",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-23",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-24",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-25",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-26",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-27",
-//       "totalAmount": 0,
-//       "returnAmount": 0,
-//       "totalPage": 0
-//     },
-//     {
-//       "date": "2023-01-28",
-//       "totalAmount": 75,
-//       "returnAmount": 12,
-//       "totalPage": 4529
-//     },
-//     {
-//       "date": "2023-01-29",
-//       "totalAmount": 77,
-//       "returnAmount": 16,
-//       "totalPage": 4917
-//     },
-//     {
-//       "date": "2023-01-30",
-//       "totalAmount": 210,
-//       "returnAmount": 13837,
-//       "totalPage": 57
-//     },
-//     {
-//       "date": "2023-01-31",
-//       "totalAmount": 219,
-//       "returnAmount": 35,
-//       "totalPage": 16873
-//     },
-//     {
-//       "date": "2022-09",
-//       "totalAmount": 2840,
-//       "returnAmount": 789,
-//       "totalPage": 161675
-//     },
-//     {
-//       "date": "2022-10",
-//       "totalAmount": 5753,
-//       "returnAmount": 940,
-//       "totalPage": 324505
-//     },
-//     {
-//       "date": "2022-11",
-//       "totalAmount": 11567,
-//       "returnAmount": 1516,
-//       "totalPage": 639098
-//     },
-//     {
-//       "date": "2022-12",
-//       "totalAmount": 6211,
-//       "returnAmount": 747,
-//       "totalPage": 352679
-//     },
-//     {
-//       "date": "2023-01",
-//       "totalAmount": 3957,
-//       "returnAmount": 559,
-//       "totalPage": 249134
-//     },
-//     {
-//       "date": "2023-02",
-//       "totalAmount": 6642,
-//       "returnAmount": 1320,
-//       "totalPage": 442547
-//     },
-//     {
-//       "date": "2022",
-//       "totalAmount": 35017,
-//       "returnAmount": 4059,
-//       "totalPage": 1938073
-//     },
-//     {
-//       "date": "2023",
-//       "totalAmount": 10599,
-//       "returnAmount": 1879,
-//       "totalPage": 691681
-//     }
-//   ]
-// }

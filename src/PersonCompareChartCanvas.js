@@ -58,7 +58,7 @@ export default class PersonCompareChartCanvas extends Component {
     })
 
     formatPersonList.sort((a, b) => {
-      return b.totalPage - a.totalPage
+      return a.totalPage - b.totalPage
     })
 
     // console.log(formatPersonList)
@@ -120,7 +120,7 @@ export default class PersonCompareChartCanvas extends Component {
     })
 
     formatPersonList.sort((a, b) => {
-      return b.totalPage - a.totalPage
+      return a.totalPage - b.totalPage
     })
 
     formatPersonList.map(v => {
@@ -176,7 +176,7 @@ export default class PersonCompareChartCanvas extends Component {
         }
       },
       legend: {
-        data: ['总卷数', '被退回次数/卷数', '总页数'],
+        data: ['总页数', '被退回卷数'],
         bottom: 10
       },
       title: [
@@ -192,29 +192,32 @@ export default class PersonCompareChartCanvas extends Component {
       ],
       grid: [
         {
-          top: '50',
+          top: '80',
           width: '85%',
           // bottom: 80,
-          left: 10,
+          left: 80,
           containLabel: true
         }
       ],
       yAxis: [
-        {
-          type: 'value',
-          name: '总卷数',
-          alignTicks: true,
-          axisLine: {
-            show: true,
-            lineStyle: {
-              color: colors[1]
-            }
-          },
-          axisLabel: {
-            formatter: '{value} 卷'
-          },
-          position: 'right'
-        },
+        // {
+        //   type: 'value',
+        //   name: '被退回卷数',
+        //   alignTicks: true,
+        //   axisLine: {
+        //     show: true,
+        //     lineStyle: {
+        //       color: colors[1]
+        //     }
+        //   },
+        //   axisLabel: {
+        //     formatter: '{value} 卷',
+            
+        //   },
+        //   // splitNumber: 20,
+        //   // interval: 12,
+        //   position: 'right'
+        // },
         {
           type: 'value',
           name: '总页数',
@@ -252,9 +255,10 @@ export default class PersonCompareChartCanvas extends Component {
       ],
       series: [
         {
-          name: '被退回次数/卷数',
+          name: '被退回卷数',
           type: 'bar',
           stack: 'scan',
+          barWidth: '40',
           label: {
             show: true,
             position: 'insideRight',
@@ -262,13 +266,26 @@ export default class PersonCompareChartCanvas extends Component {
               color: '#424242'
             }
           },
-          // xAxisIndex: 2,
+          yAxisIndex: 0,
           data: this.state.returnAmount
         },
+        // {
+        //   name: '总卷数',
+        //   type: 'bar',
+        //   // barWidth: '40%',
+        //   stack: 'scan',
+        //   label: {
+        //     show: true,
+        //     position: 'insideRight',
+        //     textStyle: {
+        //       color: '#424242'
+        //     }
+        //   },
+        //   data: this.state.totalAmount
+        // },
         {
-          name: '总卷数',
+          name: '总页数',
           type: 'bar',
-          barWidth: '40%',
           stack: 'scan',
           label: {
             show: true,
@@ -277,20 +294,32 @@ export default class PersonCompareChartCanvas extends Component {
               color: '#424242'
             }
           },
-          data: this.state.totalAmount
-        },
-        {
-          name: '总页数',
-          type: 'line',
-          label: {
-            show: true,
-            position: 'insideRight',
-            textStyle: {
-              color: '#424242'
-            }
-          },
-          yAxisIndex: 1,
-          data: this.state.totalPage
+          yAxisIndex: 0,
+          interval: 8,
+          data: this.state.totalPage,
+          markPoint: {
+            symbol:"image://https://i.postimg.cc/BQZt7QnS/crown.png",
+            itemStyle:{
+              normal:{
+                label:{
+                  show:true,
+                  position: [18,24],
+                  fontSize:10,
+                  color:'#454E60',
+                  formatter: function (param) {
+                    return param.data.coord[1]+'%'
+                  }
+                },
+              }
+            },
+            symbolSize:60,
+            symbolOffset:[0,-25],
+            data:[
+              {name:'',coord:[0,10]},
+              {name:'',coord:[1,10]},
+              {name:'',coord:[2,10]}
+            ],
+          }
         },
       ]
     })

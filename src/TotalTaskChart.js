@@ -80,7 +80,7 @@ export default class TotalTaskChart extends Component {
         },
         formatter: data => {
           let relVal = `<p style="margin: 0;padding: 0;font-size: 16px;">${data[0].name}</p>`
-          data.reverse().map((v, i) => {
+          data.map((v, i) => {
             let str = ''
             str = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;">${data[i].marker} ${data[i].seriesName}</p> <p style="font-weight: bold;">${data[i].value}卷</p></div>`
             relVal += str
