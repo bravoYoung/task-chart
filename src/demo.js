@@ -25,14 +25,6 @@ import {
 	ConfigProvider
 } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-const { RangePicker } = DatePicker;
-const { Option } = Select;
-const {
-  Header,
-  Content,
-  Sider,
-  Footer
-} = Layout
 import TotalTaskChart from './TotalTaskChart.js'
 import TplTaskChart from './TplTaskChart.js'
 import PersonTaskChart from './PersonTaskChart.js'
@@ -44,13 +36,32 @@ import {
 import chartData from './data'
 import personCompareChart from './PersonCompareChart'
 import PersonCompareChart from './PersonCompareChart';
+const { RangePicker } = DatePicker;
+const { Option } = Select;
+const {
+  Header,
+  Content,
+  Sider,
+  Footer
+} = Layout
 
 
 export default class Demo extends React.Component {
 	constructor(props) {
 		super(props);
+
+		let { personNameList } = chartData
+		let personList = []
+		if(personNameList && personNameList.length) {
+			personNameList.map(v => {
+				let obj = {value: v}
+				personList.push(obj)
+			})
+		}
+
+
 		this.state = {
-			activeTab: "3",
+			activeTab: "1",
 			pickerRangeType: 'date',
 			dates: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
 			datesValue: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
@@ -61,6 +72,7 @@ export default class Demo extends React.Component {
 			datesRangeTxt: `2023-01-01 至 2023-01-31`,
 			chartDataType: '31days',
 			isHiddenChart: false,
+			personList
 		};
 	}
 
@@ -94,13 +106,6 @@ export default class Demo extends React.Component {
 			  label: `人员对比`
 			}
 		];
-    const personList = [
-      {value: '张丰'},
-      {value: '王柳'},
-      {value: '柳寺'},
-      {value: '欧舞'},
-      {value: '王易'}
-    ]
 
 		const disabledDate = (current) => {
 			if (!this.state.dates) {
@@ -304,7 +309,7 @@ export default class Demo extends React.Component {
 									<Space className="ml-20"> 查询人员：
 									  <AutoComplete
 							        placeholder="输入姓名"
-							        options={personList}
+							        options={this.state.personList}
 							        style={{width: '140px'}}
 							        filterOption={(inputValue, option) =>
 									      option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
@@ -331,7 +336,7 @@ export default class Demo extends React.Component {
 							this.state.isHiddenChart ? (<Col flex="auto">
 									<Empty style={{marginTop: '250px'}} description={false} />
 								</Col>) : (
-								<Col flex="auto">
+								<Col style={{height: '700px', width: '100%'}}>
 									{
 										this.state.isShowTotal ? 
 										<TotalTaskChart template={this.state.template} datesRange={this.state.datesRange} datesRangeTxt={this.state.datesRangeTxt} chartDataType={this.state.chartDataType} />

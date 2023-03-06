@@ -2,6 +2,10 @@ import React, {
   Component
 } from 'react'
 import * as echarts from 'echarts'
+import chartData from './data'
+import {
+  Empty
+} from 'antd'
 
 const template = {
   'pb': '平板扫描',
@@ -9,25 +13,110 @@ const template = {
   'zj': '质检管理',
 }
 
-
+const sum = arr => {
+  return eval(arr.join('+'))
+}
 
 export default class PersonTaskChart extends Component {
   constructor(props) {
     super(props);
+
+    let totalAmount = []
+    let returnAmount = []
+    let totalPage = []
+    let yAxisTxt = []
+    let data = {}
+    if (chartData.personChart && chartData.personChart[props.person] && chartData.personChart[props.person][props.template]) {
+      data = chartData.personChart[props.person][props.template]
+    }
+    let totalData = {}
+    if (props.chartDataType && chartData.totalData && chartData.totalData[props.chartDataType] && chartData.totalData[props.chartDataType][props.template]) {
+      totalData = chartData.totalData[props.chartDataType][props.template]
+    }
+    let personTotalPageRate = 0
+    let personReturnAmountRate = 0
+
+    if(props.datesRange && props.datesRange.length) {
+      props.datesRange.map(d => {
+        if(data[d] && data[d].totalAmount) {
+          yAxisTxt.push(d)
+          totalAmount.push(data[d].totalAmount)
+          returnAmount.push(data[d].returnAmount)
+          totalPage.push(data[d].totalPage)
+        }
+      })
+
+      if (totalData.returnAmount) {
+        personReturnAmountRate = Math.round(totalData.returnAmount / sum(returnAmount))
+      }
+      if (totalData.totalPage) {
+        personTotalPageRate = Math.round(totalData.totalPage / sum(totalPage))
+      }
+    }
     
     this.state = {
       templateTxt: template[props.template] || '',
       person: props.person,
-      datesRangeTxt: props.datesRangeTxt || ''
+      datesRangeTxt: props.datesRangeTxt || '',
+      chartDataType: props.chartDataType,
+      totalAmount,
+      returnAmount,
+      totalPage,
+      yAxisTxt,
+      totalData,
+      personReturnAmountRate,
+      personTotalPageRate
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', nextProps)
+    
+    let totalAmount = []
+    let returnAmount = []
+    let totalPage = []
+    let yAxisTxt = []
+    let data = {}
+    if (chartData.personChart && chartData.personChart[nextProps.person] && chartData.personChart[nextProps.person][nextProps.template]) {
+      data = chartData.personChart[nextProps.person][nextProps.template]
+    }
+    let totalData = {}
+    if (nextProps.chartDataType && chartData.totalData && chartData.totalData[nextProps.chartDataType] && chartData.totalData[nextProps.chartDataType][nextProps.template]) {
+      totalData = chartData.totalData[nextProps.chartDataType][nextProps.template]
+    }
+    let personTotalPageRate = 0
+    let personReturnAmountRate = 0
+
+
+    if(nextProps.datesRange && nextProps.datesRange.length) {
+      nextProps.datesRange.map(d => {
+        if(data[d] && data[d].totalAmount) {
+          yAxisTxt.push(d)
+          totalAmount.push(data[d].totalAmount)
+          returnAmount.push(data[d].returnAmount)
+          totalPage.push(data[d].totalPage)
+        }
+      })
+
+      if (totalData.returnAmount) {
+        personReturnAmountRate = Math.round(totalData.returnAmount / sum(returnAmount))
+      }
+      if (totalData.totalPage) {
+        personTotalPageRate = Math.round(totalData.totalPage / sum(totalPage))
+      }
+    }
+
     this.setState({
       templateTxt: template[nextProps.template] || '',
       person: nextProps.person,
-      datesRangeTxt: nextProps.datesRangeTxt || '' 
+      datesRangeTxt: nextProps.datesRangeTxt || '',
+      chartDataType: nextProps.chartDataType,
+      totalAmount,
+      returnAmount,
+      totalPage,
+      yAxisTxt,
+      totalData,
+      personReturnAmountRate,
+      personTotalPageRate
     })
     setTimeout(() => {
       this.getOption()
@@ -36,9 +125,6 @@ export default class PersonTaskChart extends Component {
 
   componentDidMount() {
     console.log('componentDidMount')
-    // this.setState({
-    //   templateTxt: template[this.props.template] || ''
-    // })
     setTimeout(() => {
       this.getOption()
     })
@@ -47,7 +133,6 @@ export default class PersonTaskChart extends Component {
   getOption = () => {
     var myChart = echarts.init(document.getElementById('personTaskChart'));
 
-    // const colors = ['#5470C6', '#91CC75', '#EE6666'];
     const colors = ['#FF8A80', '#80b3ff', '#ffb84d'];
     const waterMarkText = 'ECHARTS';
     const canvas = document.createElement('canvas');
@@ -62,16 +147,20 @@ export default class PersonTaskChart extends Component {
     ctx.fillText(waterMarkText, 0, 0);
 
     myChart.setOption({
-      // backgroundColor: {
-      //   type: 'pattern',
-      //   image: canvas,
-      //   repeat: 'repeat'
-      // },
       color: colors,
       tooltip: {
         trigger: 'axis',
         axisPointer: {
           type: 'cross'
+        },
+        formatter: data => {
+          let relVal = `<p style="margin: 0;padding: 0;font-size: 16px;">${data[0].name}</p>`
+          let dataIndex = data[0].dataIndex
+          
+          let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#80b3ff;"></span> 总卷数</p> <p style="font-weight: bold;">${this.state.totalAmount[dataIndex]}卷</p></div>`
+          let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#FF8A80;"></span> 被退回卷数</p> <p style="font-weight: bold;">${this.state.returnAmount[dataIndex]}卷</p></div>`
+          let totalPageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#ffb84d;"></span> 总页数</p> <p style="font-weight: bold;">${this.state.totalPage[dataIndex]}页</p></div>`
+          return relVal + totalAmountStr + returnAmountStr + totalPageStr
         }
       },
       toolbox: {
@@ -82,7 +171,7 @@ export default class PersonTaskChart extends Component {
         // }
       },
       legend: {
-        data: ['总卷数', '被退回次数/卷数', '总页数'],
+        data: ['总卷数', '被退回卷数', '总页数'],
         bottom: 10
       },
       title: [
@@ -148,35 +237,11 @@ export default class PersonTaskChart extends Component {
           },
           // position: 'bottom'
         },
-        // {
-        //   type: 'value',
-        //   name: '被退回次数/卷数',
-        //   alignTicks: true,
-        //   axisLine: {
-        //     show: true,
-        //     lineStyle: {
-        //       color: colors[2]
-        //     }
-        //   },
-        //   axisLabel: {
-        //     formatter: '{value} 次/卷'
-        //   },
-        //   position: 'bottom',
-        //   offset: 40
-        // },
       ],
       xAxis: [
         {
           type: 'category',
-          // axisTick: {
-          //   alignWithLabel: true
-          // },
-          // prettier-ignore
-          data: ['1日','2日','3日','4日','5日','6日','7日',
-          '8日','9日','10日','11日','12日','13日','14日',
-          '15日','16日','17日','18日','19日','20日','21日',
-          '22日','23日','24日','25日','26日','27日','28日','29日','30日'
-          ],
+          data: this.state.yAxisTxt,
           axisLabel: {
             interval: 0,
             rotate: 30,
@@ -188,7 +253,7 @@ export default class PersonTaskChart extends Component {
       ],
       series: [
         {
-          name: '被退回次数/卷数',
+          name: '被退回卷数',
           type: 'bar',
           stack: 'scan',
           label: {
@@ -198,12 +263,7 @@ export default class PersonTaskChart extends Component {
               color: '#424242'
             }
           },
-          data: [12,10,9,5,13,12,14,10,9,5,13,12,14,10,9,5,13,12,14,10,9,5,13,12,14,10,9,5,13,12],
-          // itemStyle: {
-          //   normal: {
-          //     color: colors[0]
-          //   }
-          // }
+          data: this.state.returnAmount,
         },
         {
           name: '总卷数',
@@ -218,8 +278,7 @@ export default class PersonTaskChart extends Component {
             }
           },
           // xAxisIndex: 2,
-          data: [60,50,65,32,40,25, 10,60,50,65,32,40,25, 
-          10,60,50,65,32,40,25, 10,60,50,65,32,40,25, 10,22,56]
+          data: this.state.totalAmount
         },
         {
           name: '总页数',
@@ -233,28 +292,26 @@ export default class PersonTaskChart extends Component {
             }
           },
           yAxisIndex: 1,
-          data: [4562,5684,5264,2356,1248,1652,1548,5684,5264,2356,
-          1248,1652,1548,5684,5264,2356,1248,1652,1548,5684,5264,
-          2356,1248,1652,1548,5264,2356,1248,1652,1548]
+          data: this.state.totalPage
         },
         {
-          name: '总卷数占比',
+          name: '总页数占比',
           type: 'pie',
           radius: '80',
           data: [
-            { value: 1206, name: `${this.state.person}合格页数(10%)`, itemStyle: {color: '#Fccf5f'} },
-            { value: 43545, name: '小组合格页数(43545)', itemStyle: {color: '#1cb7b7'} }
+            { value: 1206, name: `${this.state.person}合格页数(${sum(this.state.totalPage)}, ${this.state.personTotalPageRate}%)`, itemStyle: {color: '#B995C3'} },
+            { value: 43545, name: `小组合格页数(${this.state.totalData.totalPage})`, itemStyle: {color: '#C3BEDE'} }
           ],
           left: '65%',
           top: '-50%'
         },
         {
-          name: '总卷数占比',
+          name: '退回卷数占比',
           type: 'pie',
           radius: '80',
           data: [
-            { value: 106, name: `${this.state.person}退回卷数(20%)`, itemStyle: {color: '#CB8087'} },
-            { value: 1545, name: '小组退回卷数(1545)', itemStyle: {color: '#A4DAD5'}}
+            { value: 106, name: `${this.state.person}退回卷数(${sum(this.state.returnAmount)}, ${this.state.personReturnAmountRate}%)`, itemStyle: {color: '#88ADDA'} },
+            { value: 1545, name: `小组退回卷数(${this.state.totalData.returnAmount})`, itemStyle: {color: '#8DCCDD'}}
           ],
           left: '65%',
           top: '20%'
@@ -264,6 +321,13 @@ export default class PersonTaskChart extends Component {
   }
 
   render() {
-    return (<div id="personTaskChart" style ={{height: '760px',width: '100%',backgroundColor: '#fff'}}></div>)
+    return (
+      <div>
+        <div id="personTaskChart" style={{height: '760px',width: '100%',backgroundColor: '#fff', display: this.state.totalAmount.length ? 'block' : 'none'}}></div>
+        {
+          this.state.totalAmount.length ? <div></div> : <Empty style={{marginTop: '250px'}} description={'暂无数据'} />
+        }
+      </div>
+    )
   }
 }

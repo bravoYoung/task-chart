@@ -2,7 +2,6 @@ import React, {
   Component
 } from 'react'
 import {
-  Divider,
   Empty
 } from 'antd'
 import * as echarts from 'echarts'
@@ -115,6 +114,15 @@ export default class TplTaskChart extends Component {
         trigger: 'axis',
         axisPointer: {
           type: 'cross'
+        },
+        formatter: data => {
+          let relVal = `<p style="margin: 0;padding: 0;font-size: 16px;">${data[0].name}</p>`
+          let dataIndex = data[0].dataIndex
+          
+          let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#80b3ff;"></span> 总卷数</p> <p style="font-weight: bold;">${this.state.totalAmount[dataIndex]}卷</p></div>`
+          let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#FF8A80;"></span> 被退回卷数</p> <p style="font-weight: bold;">${this.state.returnAmount[dataIndex]}卷</p></div>`
+          let totalPageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#ffb84d;"></span> 总页数</p> <p style="font-weight: bold;">${this.state.totalPage[dataIndex]}页</p></div>`
+          return relVal + totalAmountStr + returnAmountStr + totalPageStr
         }
       },
       legend: {

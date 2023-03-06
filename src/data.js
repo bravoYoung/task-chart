@@ -3778,7 +3778,70 @@ let chartData = {
         }
       }
     }
-  ]
+  ],
+  "personNameList": ["杜立飞", "刘汶", "苏扬", "黄观豪", "熊欣壮", "杨浩荣(离职)", "邱晓雯", "林志鑫",
+   "翟倩梅", "谢乐群", "彭瑞玉", "刘杏怡", "郭晓璇", "周少玉", "张宁", "李金渝", "赵东鸿",
+    "吴伟林", "沈泽鹏", "吴妙贤", "周瑾", "李家欣", "黄沛琼", "黄均佑", "余萍", 
+    "黄懿", "张靖", "蒋格琳", "麦文阳", "陈星", "李碧秋", "喻欣然", "陈琦琳", 
+    "赖子洋", "廖召顺", "黄美妍", "洪金涛"],
+  "totalData": {
+    "1day": {
+      "pb": {
+        "returnAmount": 51,
+        "totalPage": 16533
+      },
+      "pt": {
+        "returnAmount": 51,
+        "totalPage": 16036
+      },
+      "zj": {
+        "returnAmount": 48,
+        "totalPage": 18311
+      }
+    },
+    "31days": {
+      "pb": {
+        "returnAmount": 590,
+        "totalPage": 337467
+      },
+      "pt": {
+        "returnAmount": 582,
+        "totalPage": 352934
+      },
+      "zj": {
+        "returnAmount": 559,
+        "totalPage": 249134
+      }
+    },
+    "6months": {
+      "pb": {
+        "returnAmount": 4446,
+        "totalPage": 1651007
+      },
+      "pt": {
+        "returnAmount": 4301,
+        "totalPage": 1587176
+      },
+      "zj": {
+        "returnAmount": 4059,
+        "totalPage": 1496926
+      }
+    },
+    "1year": {
+      "pb": {
+        "returnAmount": 2721,
+        "totalPage": 2714273
+      },
+      "pt": {
+        "returnAmount": 6543,
+        "totalPage": 2814273
+      },
+      "zj": {
+        "returnAmount": 6243,
+        "totalPage": 2717663
+      }
+    }
+  }
 }
 export default chartData
 

@@ -28,25 +28,12 @@ export default class PersonCompareChartCanvas extends Component {
     // let template = props.template
     let chartDataType = props.chartDataType
 
-    // personListChart.map(personObj => {
-    //   let personName = Object.keys(personObj)[0]
-    //   if (personObj[personName] && personObj[personName][props.template] && personObj[personName][props.template][chartDataType]) {
-    //     let data = personObj[personName][props.template][chartDataType]
-    //     yAxisTxt.push(personName)
-    //     totalAmount.push(data.totalAmount)
-    //     returnAmount.push(data.returnAmount)
-    //     totalPage.push(data.totalPage)
-    //   }
-    // })
-
     let formatPersonList = []
 
     personListChart.map(obj => {
       let personName = Object.keys(obj)[0]
 
       let personData = {}
-
-      // console.log('personName', personName)
 
       if (obj[personName] && obj[personName][props.template] && obj[personName][props.template][chartDataType]) {
         personData.name = personName
