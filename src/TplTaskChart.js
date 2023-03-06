@@ -102,6 +102,8 @@ export default class TplTaskChart extends Component {
     ctx.translate(50, 50);
     ctx.rotate(-Math.PI / 4);
     ctx.fillText(waterMarkText, 0, 0);
+    myChart.resize()
+
 
     myChart.setOption({
       // backgroundColor: {

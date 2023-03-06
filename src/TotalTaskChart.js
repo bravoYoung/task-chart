@@ -68,6 +68,7 @@ export default class TotalTaskChart extends Component {
   getOption = () => {
     
     var myChart = echarts.init(document.getElementById('totalTaskChart'));
+    myChart.resize()
 
     const colors = ['#FF8A80', '#80b3ff', '#ffb84d'];
 

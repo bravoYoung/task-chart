@@ -47,10 +47,10 @@ export default class PersonTaskChart extends Component {
       })
 
       if (totalData.returnAmount) {
-        personReturnAmountRate = Math.round(totalData.returnAmount / sum(returnAmount))
+        personReturnAmountRate = (totalData.returnAmount / sum(returnAmount)).toFixed(2)
       }
       if (totalData.totalPage) {
-        personTotalPageRate = Math.round(totalData.totalPage / sum(totalPage))
+        personTotalPageRate = (totalData.totalPage / sum(totalPage)).toFixed(2)
       }
     }
     
@@ -98,10 +98,10 @@ export default class PersonTaskChart extends Component {
       })
 
       if (totalData.returnAmount) {
-        personReturnAmountRate = Math.round(totalData.returnAmount / sum(returnAmount))
+        personReturnAmountRate = (sum(returnAmount) / totalData.returnAmount).toFixed(2)
       }
       if (totalData.totalPage) {
-        personTotalPageRate = Math.round(totalData.totalPage / sum(totalPage))
+        personTotalPageRate = (sum(totalPage) / totalData.totalPage).toFixed(2)
       }
     }
 
@@ -133,6 +133,7 @@ export default class PersonTaskChart extends Component {
   getOption = () => {
     var myChart = echarts.init(document.getElementById('personTaskChart'));
 
+    myChart.resize()
     const colors = ['#FF8A80', '#80b3ff', '#ffb84d'];
     const waterMarkText = 'ECHARTS';
     const canvas = document.createElement('canvas');

@@ -139,6 +139,7 @@ export default class PersonCompareChartCanvas extends Component {
   getOption = () => {
     var myChart = echarts.init(document.getElementById('PersonCompareChartCanvas'));
 
+    myChart.resize()
     const colors = ['#FF8A80', '#80b3ff', '#ffb84d'];
     const waterMarkText = 'ECHARTS';
     const canvas = document.createElement('canvas');
