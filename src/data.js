@@ -3453,7 +3453,7 @@ let chartData = {
           "31days": {
             "totalAmount": 1055,
             "returnAmount": 107,
-            "totalPage": 58220
+            "totalPage": 56220
           },
           "6months": {
             "totalAmount": 3775,
