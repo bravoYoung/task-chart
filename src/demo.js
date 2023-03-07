@@ -145,7 +145,7 @@ export default class Demo extends React.Component {
 
 				{/* tab1 */}
 				<div style={{display: this.state.activeTab === '1' ? 'block' : 'none'}}>
-					<div className="mb-10 red f16">保持原来的设计</div>
+					{/* <div className="mb-10 red f16">保持原来的设计</div> */}
 					<div className="">
 						<img src={require('./images/workchart.png')} width="90%" style={{margin: '0 auto', display: 'block'}} />
 					</div>

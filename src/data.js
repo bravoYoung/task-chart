@@ -34,14 +34,14 @@ let chartData = {
         "totalPage": 0
       },
       "2023-01-03": {
-        "totalAmount": 81,
-        "returnAmount": 22,
-        "totalPage": 6908
+        "totalAmount": 192,
+        "returnAmount": 33,
+        "totalPage": 16533
       },
       "2023-01-04": {
-        "totalAmount": 474,
-        "returnAmount": 74,
-        "totalPage": 34214
+        "totalAmount": 363,
+        "returnAmount": 42,
+        "totalPage": 24589
       },
       "2023-01-05": {
         "totalAmount": 307,
@@ -231,14 +231,14 @@ let chartData = {
         "totalPage": 0
       },
       "2023-01-03": {
-        "totalAmount": 125,
-        "returnAmount": 22,
-        "totalPage": 7942
+        "totalAmount": 253,
+        "returnAmount": 51,
+        "totalPage": 16036
       },
       "2023-01-04": {
-        "totalAmount": 468,
-        "returnAmount": 75,
-        "totalPage": 30127
+        "totalAmount": 340,
+        "returnAmount": 46,
+        "totalPage": 22033
       },
       "2023-01-05": {
         "totalAmount": 505,
@@ -261,9 +261,9 @@ let chartData = {
         "totalPage": 0
       },
       "2023-01-09": {
-        "totalAmount": 29,
-        "returnAmount": 4,
-        "totalPage": 2668
+        "totalAmount": 346,
+        "returnAmount": 38,
+        "totalPage": 29172
       },
       "2023-01-10": {
         "totalAmount": 387,
@@ -428,19 +428,19 @@ let chartData = {
         "totalPage": 0
       },
       "2023-01-03": {
-        "totalAmount": 115,
-        "returnAmount": 19,
-        "totalPage": 8010
+        "totalAmount": 284,
+        "returnAmount": 48,
+        "totalPage": 18311
       },
       "2023-01-04": {
+        "totalAmount": 376,
+        "returnAmount": 46,
+        "totalPage": 24429
+      },
+      "2023-01-05": {
         "totalAmount": 447,
         "returnAmount": 28,
         "totalPage": 25455
-      },
-      "2023-01-05": {
-        "totalAmount": 545,
-        "returnAmount": 75,
-        "totalPage": 34730
       },
       "2023-01-06": {
         "totalAmount": 347,

@@ -230,7 +230,7 @@ export default class PersonCompareChartCanvas extends Component {
           color: colors[2],
           formatter: param => {
             console.log('average', param)
-            return `工作量平均值 ${param.value} 页`
+            return `工作量平均值 ${Math.floor(param.value)} 页`
           }
         }
       }
