@@ -25,14 +25,6 @@ import {
 	ConfigProvider
 } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-const { RangePicker } = DatePicker;
-const { Option } = Select;
-const {
-  Header,
-  Content,
-  Sider,
-  Footer
-} = Layout
 import {
 	getTimeTwo,
 	getMonthBetween,
@@ -41,6 +33,14 @@ import {
 import chartData from './data'
 import * as echarts from 'echarts'
 import PersonCompareChartCanvas from './PersonCompareChartCanvas'
+const { RangePicker } = DatePicker;
+const { Option } = Select;
+const {
+  Header,
+  Content,
+  Sider,
+  Footer
+} = Layout
 
 const template = {
   'pb': '平板扫描',
@@ -55,7 +55,7 @@ export default class PersonCompareChart extends Component {
     super(props);
     
     this.state = {
-      activeTab: "2",
+      activeTab: "3",
 			pickerRangeType: 'date',
 			dates: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
 			datesValue: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],

@@ -17,22 +17,18 @@ const template = {
 export default class PersonCompareChartCanvas extends Component {
   constructor(props) {
     super(props);
-
-    console.log('props in PersonCompareChartCanvas', props)
     
     let totalAmount = []
     let returnAmount = []
     let totalPage = []
     let yAxisTxt = []
     let personListChart = chartData.personListChart
-    // let template = props.template
     let chartDataType = props.chartDataType
 
     let formatPersonList = []
 
     personListChart.map(obj => {
       let personName = Object.keys(obj)[0]
-
       let personData = {}
 
       if (obj[personName] && obj[personName][props.template] && obj[personName][props.template][chartDataType]) {
@@ -57,6 +53,8 @@ export default class PersonCompareChartCanvas extends Component {
     
     this.state = {
       templateTxt: template[props.template] || '',
+      legendTxt: [`${props.template === 'zj' ? '发现合格卷数' : '总卷数'}`, `${props.template === 'zj' ? '发现不合格卷数' : '被退回卷数'}`, '总页数'],
+      template: props.template,
       datesRangeTxt: props.datesRangeTxt || '',
       datesRange: props.datesRange,
       totalAmount,
@@ -76,18 +74,6 @@ export default class PersonCompareChartCanvas extends Component {
     let yAxisTxt = []
     let personListChart = chartData.personListChart
     let chartDataType = nextProps.chartDataType
-
-    // personListChart.map(personObj => {
-    //   let personName = Object.keys(personObj)[0]
-    //   if (personObj[personName] && personObj[personName][nextProps.template] && personObj[personName][nextProps.template][chartDataType]) {
-    //     let data = personObj[personName][nextProps.template][chartDataType]
-    //     yAxisTxt.push(personName)
-    //     totalAmount.push(data.totalAmount)
-    //     returnAmount.push(data.returnAmount)
-    //     totalPage.push(data.totalPage)
-    //   }
-    // })
-
     let formatPersonList = []
 
     personListChart.map(obj => {
@@ -117,6 +103,8 @@ export default class PersonCompareChartCanvas extends Component {
 
     this.setState({
       templateTxt: template[nextProps.template] || '',
+      template: nextProps.template,
+      legendTxt: [`${nextProps.template === 'zj' ? '发现合格卷数' : '总卷数'}`, `${nextProps.template === 'zj' ? '发现不合格卷数' : '被退回卷数'}`, '总页数'],
       datesRangeTxt: nextProps.datesRangeTxt || '',
       datesRange: nextProps.datesRange,
       totalAmount,
@@ -140,7 +128,7 @@ export default class PersonCompareChartCanvas extends Component {
     var myChart = echarts.init(document.getElementById('PersonCompareChartCanvas'));
 
     myChart.resize()
-    const colors = ['#FF8A80', '#80b3ff', '#ffb84d'];
+    const colors = ['#80b3ff', '#FF8A80', '#ffb84d', '#FFAB91'];
     const waterMarkText = 'ECHARTS';
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -153,6 +141,103 @@ export default class PersonCompareChartCanvas extends Component {
     ctx.rotate(-Math.PI / 4);
     ctx.fillText(waterMarkText, 0, 0);
 
+    const totalAmountSeries = {
+      name: this.state.legendTxt[0],
+      type: 'bar',
+      barWidth: '40%',
+      stack: 'scan',
+      label: {
+        show: false,
+        position: 'insideRight',
+        textStyle: {
+          color: '#424242'
+        }
+      },
+      itemStyle: {
+        color: colors[0]
+      },
+      data: this.state.totalAmount
+    }
+    const returnAmountSeries = {
+      name: this.state.legendTxt[1],
+      type: 'bar',
+      stack: 'scan',
+      barWidth: '40',
+      label: {
+        show: false,
+        position: 'insideTop',
+        textStyle: {
+          color: '#424242'
+        }
+      },
+      itemStyle: {
+        color: this.state.template === 'zj' ? colors[3] : colors[1]
+      },
+      yAxisIndex: 0,
+      data: this.state.returnAmount
+    }
+    const totalPageSeries = {
+      name: '总页数',
+      type: 'line',
+      // stack: 'scan',
+      label: {
+        show: false,
+        position: 'insideTop',
+        textStyle: {
+          color: '#424242'
+        },
+        formatter: (params) => {
+          let { dataIndex } = params
+          return params.value + `页 \n\n (${this.state.totalAmount[dataIndex]}卷)`
+        },
+      },
+      itemStyle: {
+        color: colors[2]
+      },
+      yAxisIndex: 1,
+      interval: 8,
+      data: this.state.totalPage,
+      markPoint: {
+        data: [
+          {
+            value: '',
+            symbol: "image://" + require('./images/1.png'),
+            symbolSize: 55,
+            symbolRotate: -30,
+            coord: [0, this.state.totalPage[0] + (this.state.totalPage[0] * 0.05)]
+          },
+          {
+            value: '',
+            symbol: "image://" + require('./images/2.png'),
+            symbolSize: 50,
+            symbolRotate: -30,
+            coord: [1, this.state.totalPage[1] + (this.state.totalPage[0] * 0.045)]
+          },
+          {
+            value: '',
+            
+            symbol: "image://" + require('./images/3.png'),
+            symbolSize: 45,
+            symbolRotate: -30,
+            coord: [2, this.state.totalPage[2] + (this.state.totalPage[0] * 0.04)]
+          }
+        ]
+      },
+      markLine: {
+        data: [{ type: 'average', name: '工作量平均值' }],
+        label: {
+          show: true,
+          color: colors[2],
+          formatter: param => {
+            console.log('average', param)
+            return `工作量平均值 ${param.value} 页`
+          }
+        }
+      }
+    }
+    const seriesConfig = this.state.template === 'zj' ? 
+    [totalAmountSeries, returnAmountSeries, totalPageSeries] : [returnAmountSeries, totalAmountSeries, totalPageSeries]
+
     myChart.setOption({
       color: colors,
       tooltip: {
@@ -164,14 +249,14 @@ export default class PersonCompareChartCanvas extends Component {
           let relVal = `<p style="margin: 0;padding: 0;font-size: 16px;">${data[0].name}</p>`
           let dataIndex = data[0].dataIndex
           
-          let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#80b3ff;"></span> 总卷数</p> <p style="font-weight: bold;">${this.state.totalAmount[dataIndex]}卷</p></div>`
-          let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#FF8A80;"></span> 被退回卷数</p> <p style="font-weight: bold;">${this.state.returnAmount[dataIndex]}卷</p></div>`
+          let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#80b3ff;"></span> ${this.state.legendTxt[0]}</p> <p style="font-weight: bold;">${this.state.totalAmount[dataIndex]}卷</p></div>`
+          let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#FF8A80;"></span> ${this.state.legendTxt[1]}</p> <p style="font-weight: bold;">${this.state.returnAmount[dataIndex]}卷</p></div>`
           let totalPageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#ffb84d;"></span> 总页数</p> <p style="font-weight: bold;">${this.state.totalPage[dataIndex]}页</p></div>`
           return relVal + totalAmountStr + returnAmountStr + totalPageStr
         }
       },
       legend: {
-        data: ['总页数', '被退回卷数'],
+        data: this.state.legendTxt,
         bottom: 10
       },
       title: [
@@ -197,7 +282,25 @@ export default class PersonCompareChartCanvas extends Component {
       yAxis: [
         {
           type: 'value',
-          name: '',
+          name: '卷数',
+          alignTicks: true,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: colors[0]
+            }
+          },
+          axisLabel: {
+            formatter: '{value} 卷'
+          },
+          position: 'bottom',
+          splitLine: {
+            show: false
+          }
+        },
+        {
+          type: 'value',
+          name: '页数',
           alignTicks: true,
           axisTick: {
             show: true,
@@ -207,13 +310,16 @@ export default class PersonCompareChartCanvas extends Component {
           axisLine: {
             show: true,
             lineStyle: {
-              color: colors[1]
+              color: colors[2]
             } 
           },
           axisLabel: {
-            formatter: '{value}'
+            formatter: '{value} 页'
           },
-          position: 'left'
+          position: 'top',
+          splitLine: {
+            show: false
+          }
         }
       ],
       xAxis: [
@@ -229,68 +335,7 @@ export default class PersonCompareChartCanvas extends Component {
           }
         }
       ],
-      series: [
-        {
-          name: '被退回卷数',
-          type: 'bar',
-          stack: 'scan',
-          barWidth: '40',
-          label: {
-            show: false,
-            position: 'insideTop',
-            textStyle: {
-              color: '#424242'
-            }
-          },
-          yAxisIndex: 0,
-          data: this.state.returnAmount
-        },
-        {
-          name: '总页数',
-          type: 'bar',
-          stack: 'scan',
-          label: {
-            show: false,
-            position: 'insideTop',
-            textStyle: {
-              color: '#424242'
-            },
-            formatter: (params) => {
-              let { dataIndex } = params
-              return params.value + `页 \n\n (${this.state.totalAmount[dataIndex]}卷)`
-            },
-          },
-          yAxisIndex: 0,
-          interval: 8,
-          data: this.state.totalPage,
-          markPoint: {
-            data: [
-              {
-                value: '',
-                symbol: "image://" + require('./images/1.png'),
-                symbolSize: 55,
-                symbolRotate: -30,
-                coord: [0, this.state.totalPage[0] + (this.state.totalPage[0] * 0.05)]
-              },
-              {
-                value: '',
-                symbol: "image://" + require('./images/2.png'),
-                symbolSize: 50,
-                symbolRotate: -30,
-                coord: [1, this.state.totalPage[1] + (this.state.totalPage[0] * 0.045)]
-              },
-              {
-                value: '',
-                
-                symbol: "image://" + require('./images/3.png'),
-                symbolSize: 45,
-                symbolRotate: -30,
-                coord: [2, this.state.totalPage[2] + (this.state.totalPage[0] * 0.04)]
-              }
-            ]
-          }
-        },
-      ]
+      series: seriesConfig
     })
   }
 

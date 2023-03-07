@@ -3400,9 +3400,9 @@ let chartData = {
         },
         "zj": {
           "31days": {
-            "totalAmount": 1751,
-            "returnAmount": 302,
-            "totalPage": 14385
+            "totalAmount": 481,
+            "returnAmount": 73,
+            "totalPage": 31112
           },
           "6months": {
             "totalAmount": 1751,
@@ -3599,7 +3599,7 @@ let chartData = {
       }
     },
     {
-      "廖召顺": {
+      "廖召顺(管理员)": {
         "pb": {
           "1day": {
             "totalAmount": 48,
@@ -3659,7 +3659,7 @@ let chartData = {
       }
     },
     {
-      "黄美妍": {
+      "黄美妍(管理员)": {
         "pb": {
           "31days": {
             "totalAmount": 63,
@@ -3719,7 +3719,7 @@ let chartData = {
       }
     },
     {
-      "洪金涛": {
+      "洪金涛(管理员)": {
         "pb": {
           "31days": {
             "totalAmount": 8,
