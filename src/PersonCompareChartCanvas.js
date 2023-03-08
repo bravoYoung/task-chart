@@ -1,3 +1,7 @@
+/**
+ * 人员对比统计图
+ */
+
 import React, {
   Component
 } from 'react'
@@ -13,6 +17,8 @@ const template = {
   'pt': '影像处理',
   'zj': '质检管理',
 }
+
+const colors = ['#80b3ff', '#FF8A80', '#ffb84d', '#FFAB91'];
 
 export default class PersonCompareChartCanvas extends Component {
   constructor(props) {
@@ -128,7 +134,6 @@ export default class PersonCompareChartCanvas extends Component {
     var myChart = echarts.init(document.getElementById('PersonCompareChartCanvas'));
 
     myChart.resize()
-    const colors = ['#80b3ff', '#FF8A80', '#ffb84d', '#FFAB91'];
     const waterMarkText = 'ECHARTS';
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -156,7 +161,14 @@ export default class PersonCompareChartCanvas extends Component {
       itemStyle: {
         color: colors[0]
       },
-      data: this.state.totalAmount
+      data: this.state.totalAmount,
+      markLine: {
+        show: false,
+        lineStyle: {
+          opacity: 0,
+          color: '#f00'
+        }
+      }
     }
     const returnAmountSeries = {
       name: this.state.legendTxt[1],
@@ -174,7 +186,31 @@ export default class PersonCompareChartCanvas extends Component {
         color: this.state.template === 'zj' ? colors[3] : colors[1]
       },
       yAxisIndex: 0,
-      data: this.state.returnAmount
+      data: this.state.returnAmount,
+      markLine: {
+        data: this.state.template === 'zj' ? [] : [{ type: 'average', name: '退回卷数平均值' }],
+        lineStyle: this.state.template === 'zj' ? {
+          normal: {
+            opacity: 0
+          }
+        } : {
+          normal: {
+            opacity: 1,
+            color: colors[1]
+          }
+        },
+        label: {
+          show: this.state.template !== 'zj',
+          color: colors[1],
+          formatter: param => {
+            if (this.state.template === 'zj') {
+              return ''
+            } else {
+              return `退回卷数平均值 ${Math.floor(param.value)} 卷`
+            }
+          }
+        }
+      }
     }
     const totalPageSeries = {
       name: '总页数',
@@ -215,7 +251,6 @@ export default class PersonCompareChartCanvas extends Component {
           },
           {
             value: '',
-            
             symbol: "image://" + require('./images/3.png'),
             symbolSize: 45,
             symbolRotate: -30,
@@ -229,12 +264,12 @@ export default class PersonCompareChartCanvas extends Component {
           show: true,
           color: colors[2],
           formatter: param => {
-            console.log('average', param)
             return `工作量平均值 ${Math.floor(param.value)} 页`
           }
         }
       }
     }
+    
     const seriesConfig = this.state.template === 'zj' ? 
     [totalAmountSeries, returnAmountSeries, totalPageSeries] : [returnAmountSeries, totalAmountSeries, totalPageSeries]
 

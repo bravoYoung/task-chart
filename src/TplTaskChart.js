@@ -1,3 +1,7 @@
+/**
+ * 三个功能模块统计图
+ */
+
 import React, {
   Component
 } from 'react'

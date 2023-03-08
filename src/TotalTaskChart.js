@@ -1,3 +1,7 @@
+/**
+ * 全模块统计图
+ */
+
 import React, {
   Component
 } from 'react'
@@ -10,8 +14,6 @@ const template = {
   'pt': '影像处理',
   'zj': '质检管理',
 }
-
-
 
 export default class TotalTaskChart extends Component {
   constructor(props) {
@@ -27,6 +29,8 @@ export default class TotalTaskChart extends Component {
       
     this.state = {
       templateTxt: template[props.template] || '',
+      template: props.template,
+      legendTxt: [`${props.template === 'zj' ? '发现合格卷数' : '总卷数'}`, `${props.template === 'zj' ? '发现不合格卷数' : '被退回卷数'}`, '总页数'],
       datesRangeTxt: props.datesRangeTxt || '',
       datesRange: props.datesRange,
       chartDataType: props.chartDataType,
@@ -47,6 +51,8 @@ export default class TotalTaskChart extends Component {
 
     this.setState({
       templateTxt: template[nextProps.template] || '',
+      template: nextProps.template,
+      legendTxt: [`${nextProps.template === 'zj' ? '发现合格卷数' : '总卷数'}`, `${nextProps.template === 'zj' ? '发现不合格卷数' : '被退回卷数'}`, '总页数'],
       datesRangeTxt: nextProps.datesRangeTxt || '',
       datesRange: nextProps.datesRange,
       chartDataType: nextProps.chartDataType,
