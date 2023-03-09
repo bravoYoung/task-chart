@@ -16,6 +16,7 @@ const template = {
   'pt': '影像处理',
   'zj': '质检管理',
 }
+const colors = ['#80b3ff', '#FF8A80', '#ffb84d', '#FFAB91'];
 
 export default class TplTaskChart extends Component {
   constructor(props) {
@@ -41,7 +42,9 @@ export default class TplTaskChart extends Component {
     }
     
     this.state = {
+      template: props.template,
       templateTxt: template[props.template] || '',
+      legendTxt: props.template !== 'zj' ? ['总卷数', '被退回卷数', '总页数'] : ['质检发现合格卷数', '质检发现不合格卷数', '总页数'],
       datesRangeTxt: props.datesRangeTxt || '',
       datesRange: props.datesRange,
       totalAmount,
@@ -52,8 +55,6 @@ export default class TplTaskChart extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', nextProps)
-    
     let totalAmount = []
     let returnAmount = []
     let totalPage = []
@@ -71,7 +72,9 @@ export default class TplTaskChart extends Component {
       })
     }
     this.setState({
+      template: nextProps.template,
       templateTxt: template[nextProps.template] || '',
+      legendTxt: nextProps.template !== 'zj' ? ['总卷数', '被退回卷数', '总页数'] : ['质检发现合格卷数', '质检发现不合格卷数', '总页数'],
       datesRangeTxt: nextProps.datesRangeTxt || '',
       datesRange: nextProps.datesRange,
       totalAmount,
@@ -85,16 +88,21 @@ export default class TplTaskChart extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
     setTimeout(() => {
       this.getOption()
     })
   }
 
   getOption = () => {
-    var myChart = echarts.init(document.getElementById('tplTaskChart'));
+    let myChart = echarts.init(document.getElementById('tplTaskChart'));
+    const {
+      legendTxt,
+      totalAmount,
+      totalPage,
+      returnAmount,
+      template
+    } = this.state
 
-    const colors = ['#FF8A80', '#80b3ff', '#ffb84d'];
     const waterMarkText = 'ECHARTS';
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -108,6 +116,56 @@ export default class TplTaskChart extends Component {
     ctx.fillText(waterMarkText, 0, 0);
     myChart.resize()
 
+    const totalAmountSeries = {
+      name: legendTxt[0],
+      type: 'bar',
+      barWidth: '40%',
+      stack: 'scan',
+      label: {
+        show: true,
+        position: 'insideRight',
+        textStyle: {
+          color: '#424242'
+        }
+      },
+      itemStyle: {
+        color: colors[0]
+      },
+      data: totalAmount
+    }
+    const returnAmountSeries = {
+      name: legendTxt[1],
+      type: 'bar',
+      stack: 'scan',
+      label: {
+        show: true,
+        position: 'insideRight',
+        textStyle: {
+          color: '#424242'
+        }
+      },
+      itemStyle: {
+        color: template === 'zj' ? colors[3] : colors[1]
+      },
+      data: returnAmount
+    }
+    const totalPageSeries = {
+      name: legendTxt[2],
+      type: 'line',
+      label: {
+        show: true,
+        position: 'insideRight',
+        textStyle: {
+          color: '#424242'
+        }
+      },
+      itemStyle: {
+        color: colors[2]
+      },
+      yAxisIndex: 1,
+      data: totalPage
+    }
+    const seriesConfig = template !== 'zj' ? [returnAmountSeries, totalAmountSeries, totalPageSeries] : [totalAmountSeries, returnAmountSeries, totalPageSeries]
 
     myChart.setOption({
       // backgroundColor: {
@@ -132,7 +190,7 @@ export default class TplTaskChart extends Component {
         }
       },
       legend: {
-        data: ['总卷数', '被退回次数/卷数', '总页数'],
+        data: legendTxt,
         bottom: 10
       },
       title: [
@@ -158,22 +216,25 @@ export default class TplTaskChart extends Component {
       yAxis: [
         {
           type: 'value',
-          name: '总卷数',
+          name: '卷数',
           alignTicks: true,
           axisLine: {
             show: true,
             lineStyle: {
-              color: colors[1]
+              color: colors[0]
             }
           },
           axisLabel: {
             formatter: '{value} 卷'
           },
+          splitLine: {
+            show: false
+          },
           position: 'bottom'
         },
         {
           type: 'value',
-          name: '总页数',
+          name: '页数',
           alignTicks: true,
           axisTick: {
             show: true,
@@ -188,6 +249,9 @@ export default class TplTaskChart extends Component {
           },
           axisLabel: {
             formatter: '{value} 页'
+          },
+          splitLine: {
+            show: false
           },
           position: 'top'
         }
@@ -205,49 +269,7 @@ export default class TplTaskChart extends Component {
           }
         }
       ],
-      series: [
-        {
-          name: '被退回次数/卷数',
-          type: 'bar',
-          stack: 'scan',
-          label: {
-            show: true,
-            position: 'insideRight',
-            textStyle: {
-              color: '#424242'
-            }
-          },
-          // xAxisIndex: 2,
-          data: this.state.returnAmount
-        },
-        {
-          name: '总卷数',
-          type: 'bar',
-          barWidth: '40%',
-          stack: 'scan',
-          label: {
-            show: true,
-            position: 'insideRight',
-            textStyle: {
-              color: '#424242'
-            }
-          },
-          data: this.state.totalAmount
-        },
-        {
-          name: '总页数',
-          type: 'line',
-          label: {
-            show: true,
-            position: 'insideRight',
-            textStyle: {
-              color: '#424242'
-            }
-          },
-          yAxisIndex: 1,
-          data: this.state.totalPage
-        },
-      ]
+      series: seriesConfig
     })
   }
 

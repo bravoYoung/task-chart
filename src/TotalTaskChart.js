@@ -112,7 +112,7 @@ export default class TotalTaskChart extends Component {
       }
     }
     const returnAmountSeries = {
-      name: '被退回卷数/质检发现不合格卷数',
+      name: '被退回次数/质检发现不合格卷数',
       type: 'bar',
       barWidth: '66',
       stack: 'scan',
@@ -131,7 +131,7 @@ export default class TotalTaskChart extends Component {
             return param.value + `卷 \n\n (${totalPage[4]}页)`
           }
           
-          return param.value + '卷'
+          return param.value + '次'
         }
       },
       data: [...returnAmount.slice(0, 4), totalAmount[4]],
@@ -202,7 +202,7 @@ export default class TotalTaskChart extends Component {
             color: colors[0]
           }
         }, {
-          name: '被退回卷数/质检发现不合格卷数',
+          name: '被退回次数/质检发现不合格卷数',
           itemStyle: {
             color: colors[1]
           }

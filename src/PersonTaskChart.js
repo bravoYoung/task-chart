@@ -6,15 +6,14 @@ import chartData from './data'
 import {
   Empty
 } from 'antd'
+import {
+  sum
+} from './getDates'
 
 const template = {
   'pb': '平板扫描',
   'pt': '影像处理',
   'zj': '质检管理',
-}
-
-const sum = arr => {
-  return eval(arr.join('+'))
 }
 
 export default class PersonTaskChart extends Component {

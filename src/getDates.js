@@ -72,3 +72,7 @@ export const getYearBetween = (start, end) => {
   }
   return result;
 }
+
+export const sum = arr => {
+  return eval(arr.join('+'))
+}

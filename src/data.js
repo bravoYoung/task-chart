@@ -3598,186 +3598,186 @@ let chartData = {
         }
       }
     },
-    {
-      "廖召顺(管理员)": {
-        "pb": {
-          "1day": {
-            "totalAmount": 48,
-            "returnAmount": 4,
-            "totalPage": 1990
-          },
-          "31days": {
-            "totalAmount": 309,
-            "returnAmount": 70,
-            "totalPage": 16529
-          },
-          "6months": {
-            "totalAmount": 2039,
-            "returnAmount": 298,
-            "totalPage": 111843
-          },
-          "1year": {
-            "totalAmount": 2039,
-            "returnAmount": 298,
-            "totalPage": 111843
-          }
-        },
-        "pt": {
-          "31days": {
-            "totalAmount": 28,
-            "returnAmount": 4,
-            "totalPage": 1598
-          },
-          "6months": {
-            "totalAmount": 46,
-            "returnAmount": 7,
-            "totalPage": 3135
-          },
-          "1year": {
-            "totalAmount": 7,
-            "returnAmount": 46,
-            "totalPage": 3135
-          }
-        },
-        "zj": {
-          "31days": {
-            "totalAmount": 56,
-            "returnAmount": 15,
-            "totalPage": 4489
-          },
-          "6months": {
-            "totalAmount": 184,
-            "returnAmount": 39,
-            "totalPage": 11685
-          },
-          "1year": {
-            "totalAmount": 184,
-            "returnAmount": 79,
-            "totalPage": 11685
-          }
-        }
-      }
-    },
-    {
-      "黄美妍(管理员)": {
-        "pb": {
-          "31days": {
-            "totalAmount": 63,
-            "returnAmount": 7,
-            "totalPage": 3710
-          },
-          "6months": {
-            "totalAmount": 839,
-            "returnAmount": 68,
-            "totalPage": 61635
-          },
-          "1year": {
-            "totalAmount": 839,
-            "returnAmount": 68,
-            "totalPage": 61635
-          }
-        },
-        "pt": {
-          "31days": {
-            "totalAmount": 27,
-            "returnAmount": 1,
-            "totalPage": 2133
-          },
-          "6months": {
-            "totalAmount": 242,
-            "returnAmount": 5,
-            "totalPage": 19421
-          },
-          "1year": {
-            "totalAmount": 242,
-            "returnAmount": 5,
-            "totalPage": 19421
-          }
-        },
-        "zj": {
-          "1day": {
-            "totalAmount": 8,
-            "returnAmount": 4,
-            "totalPage": 498
-          },
-          "31days": {
-            "totalAmount": 428,
-            "returnAmount": 39,
-            "totalPage": 26153
-          },
-          "6months": {
-            "totalAmount": 1379,
-            "returnAmount": 283,
-            "totalPage": 82970
-          },
-          "1year": {
-            "totalAmount": 1379,
-            "returnAmount": 283,
-            "totalPage": 82970
-          }
-        }
-      }
-    },
-    {
-      "洪金涛(管理员)": {
-        "pb": {
-          "31days": {
-            "totalAmount": 8,
-            "returnAmount": 6,
-            "totalPage": 301
-          },
-          "6months": {
-            "totalAmount": 264,
-            "returnAmount": 40,
-            "totalPage": 14418
-          },
-          "1year": {
-            "totalAmount": 264,
-            "returnAmount": 40,
-            "totalPage": 14418
-          }
-        },
-        "pt": {
-          "1day": {
-            "totalAmount": 15,
-            "returnAmount": 1,
-            "totalPage": 865
-          },
-          "31days": {
-            "totalAmount": 131,
-            "returnAmount": 31,
-            "totalPage": 6673
-          },
-          "6months": {
-            "totalAmount": 293,
-            "returnAmount": 69,
-            "totalPage": 16351
-          },
-          "1year": {
-            "totalAmount": 293,
-            "returnAmount": 69,
-            "totalPage": 16351
-          }
-        },
-        "zj": {
-          "31days": {
-            "totalAmount": 39,
-            "returnAmount": 1,
-            "totalPage": 1
-          },
-          "6months": {
-            "totalAmount": 806,
-            "returnAmount": 139,
-            "totalPage": 45301
-          },
-          "1year": {
-            "totalAmount": 806,
-            "returnAmount": 139,
-            "totalPage": 45301
-          }
-        }
-      }
-    }
+    // {
+    //   "廖召顺(管理员)": {
+    //     "pb": {
+    //       "1day": {
+    //         "totalAmount": 48,
+    //         "returnAmount": 4,
+    //         "totalPage": 1990
+    //       },
+    //       "31days": {
+    //         "totalAmount": 309,
+    //         "returnAmount": 70,
+    //         "totalPage": 16529
+    //       },
+    //       "6months": {
+    //         "totalAmount": 2039,
+    //         "returnAmount": 298,
+    //         "totalPage": 111843
+    //       },
+    //       "1year": {
+    //         "totalAmount": 2039,
+    //         "returnAmount": 298,
+    //         "totalPage": 111843
+    //       }
+    //     },
+    //     "pt": {
+    //       "31days": {
+    //         "totalAmount": 28,
+    //         "returnAmount": 4,
+    //         "totalPage": 1598
+    //       },
+    //       "6months": {
+    //         "totalAmount": 46,
+    //         "returnAmount": 7,
+    //         "totalPage": 3135
+    //       },
+    //       "1year": {
+    //         "totalAmount": 7,
+    //         "returnAmount": 46,
+    //         "totalPage": 3135
+    //       }
+    //     },
+    //     "zj": {
+    //       "31days": {
+    //         "totalAmount": 56,
+    //         "returnAmount": 15,
+    //         "totalPage": 4489
+    //       },
+    //       "6months": {
+    //         "totalAmount": 184,
+    //         "returnAmount": 39,
+    //         "totalPage": 11685
+    //       },
+    //       "1year": {
+    //         "totalAmount": 184,
+    //         "returnAmount": 79,
+    //         "totalPage": 11685
+    //       }
+    //     }
+    //   }
+    // },
+    // {
+    //   "黄美妍(管理员)": {
+    //     "pb": {
+    //       "31days": {
+    //         "totalAmount": 63,
+    //         "returnAmount": 7,
+    //         "totalPage": 3710
+    //       },
+    //       "6months": {
+    //         "totalAmount": 839,
+    //         "returnAmount": 68,
+    //         "totalPage": 61635
+    //       },
+    //       "1year": {
+    //         "totalAmount": 839,
+    //         "returnAmount": 68,
+    //         "totalPage": 61635
+    //       }
+    //     },
+    //     "pt": {
+    //       "31days": {
+    //         "totalAmount": 27,
+    //         "returnAmount": 1,
+    //         "totalPage": 2133
+    //       },
+    //       "6months": {
+    //         "totalAmount": 242,
+    //         "returnAmount": 5,
+    //         "totalPage": 19421
+    //       },
+    //       "1year": {
+    //         "totalAmount": 242,
+    //         "returnAmount": 5,
+    //         "totalPage": 19421
+    //       }
+    //     },
+    //     "zj": {
+    //       "1day": {
+    //         "totalAmount": 8,
+    //         "returnAmount": 4,
+    //         "totalPage": 498
+    //       },
+    //       "31days": {
+    //         "totalAmount": 428,
+    //         "returnAmount": 39,
+    //         "totalPage": 26153
+    //       },
+    //       "6months": {
+    //         "totalAmount": 1379,
+    //         "returnAmount": 283,
+    //         "totalPage": 82970
+    //       },
+    //       "1year": {
+    //         "totalAmount": 1379,
+    //         "returnAmount": 283,
+    //         "totalPage": 82970
+    //       }
+    //     }
+    //   }
+    // },
+    // {
+    //   "洪金涛(管理员)": {
+    //     "pb": {
+    //       "31days": {
+    //         "totalAmount": 8,
+    //         "returnAmount": 6,
+    //         "totalPage": 301
+    //       },
+    //       "6months": {
+    //         "totalAmount": 264,
+    //         "returnAmount": 40,
+    //         "totalPage": 14418
+    //       },
+    //       "1year": {
+    //         "totalAmount": 264,
+    //         "returnAmount": 40,
+    //         "totalPage": 14418
+    //       }
+    //     },
+    //     "pt": {
+    //       "1day": {
+    //         "totalAmount": 15,
+    //         "returnAmount": 1,
+    //         "totalPage": 865
+    //       },
+    //       "31days": {
+    //         "totalAmount": 131,
+    //         "returnAmount": 31,
+    //         "totalPage": 6673
+    //       },
+    //       "6months": {
+    //         "totalAmount": 293,
+    //         "returnAmount": 69,
+    //         "totalPage": 16351
+    //       },
+    //       "1year": {
+    //         "totalAmount": 293,
+    //         "returnAmount": 69,
+    //         "totalPage": 16351
+    //       }
+    //     },
+    //     "zj": {
+    //       "31days": {
+    //         "totalAmount": 39,
+    //         "returnAmount": 1,
+    //         "totalPage": 1
+    //       },
+    //       "6months": {
+    //         "totalAmount": 806,
+    //         "returnAmount": 139,
+    //         "totalPage": 45301
+    //       },
+    //       "1year": {
+    //         "totalAmount": 806,
+    //         "returnAmount": 139,
+    //         "totalPage": 45301
+    //       }
+    //     }
+    //   }
+    // }
   ],
   "personNameList": ["杜立飞", "刘汶", "苏扬", "黄观豪", "熊欣壮", "杨浩荣(离职)", "邱晓雯", "林志鑫",
    "翟倩梅", "谢乐群", "彭瑞玉", "刘杏怡", "郭晓璇", "周少玉", "张宁", "李金渝", "赵东鸿",

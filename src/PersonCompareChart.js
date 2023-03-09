@@ -55,12 +55,11 @@ export default class PersonCompareChart extends Component {
     super(props);
     
     this.state = {
-      activeTab: "3",
+      activeTab: "1",
 			pickerRangeType: 'date',
 			dates: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
 			datesValue: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
 			template: 'pb',
-			// person: '',
 			datesRange: getTimeTwo('2023-01-01', '2023-01-31'),
 			datesRangeTxt: `2023-01-01 至 2023-01-31`,
 			chartDataType: '31days',
