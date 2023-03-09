@@ -66,7 +66,7 @@ export default class Demo extends React.Component {
 			dates: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
 			datesValue: [dayjs('2023-01-01', 'YYYY-MM-DD'), dayjs('2023-01-31', 'YYYY-MM-DD')],
 			template: 'pb',
-			isShowTotal: false,
+			isShowTotal: true,
 			person: '',
 			datesRange: getTimeTwo('2023-01-01', '2023-01-31'),
 			datesRangeTxt: `2023-01-01 至 2023-01-31`,
@@ -339,7 +339,7 @@ export default class Demo extends React.Component {
 								<Col style={{height: '700px', width: '100%'}}>
 									{
 										this.state.isShowTotal ? 
-										<TotalTaskChart template={this.state.template} datesRange={this.state.datesRange} datesRangeTxt={this.state.datesRangeTxt} chartDataType={this.state.chartDataType} />
+										<TotalTaskChart datesRange={this.state.datesRange} datesRangeTxt={this.state.datesRangeTxt} chartDataType={this.state.chartDataType} />
 										: (this.state.person==='' ? 
 											<TplTaskChart template={this.state.template} datesRange={this.state.datesRange} datesRangeTxt={this.state.datesRangeTxt} chartDataType={this.state.chartDataType} />
 											: <PersonTaskChart template={this.state.template} person={this.state.person} datesRange={this.state.datesRange} datesRangeTxt={this.state.datesRangeTxt} chartDataType={this.state.chartDataType} />
