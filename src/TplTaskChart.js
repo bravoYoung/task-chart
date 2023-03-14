@@ -10,13 +10,18 @@ import {
 } from 'antd'
 import * as echarts from 'echarts'
 import chartData from './data'
+import {
+  sum
+} from './getDates'
+import {
+  COLORS
+} from './CONSTANTS'
 
 const template = {
   'pb': '平板扫描',
   'pt': '影像处理',
   'zj': '质检管理',
 }
-const colors = ['#80b3ff', '#FF8A80', '#ffb84d', '#FFAB91'];
 
 export default class TplTaskChart extends Component {
   constructor(props) {
@@ -29,6 +34,7 @@ export default class TplTaskChart extends Component {
     let totalPage = []
     let yAxisTxt = []
     let data = chartData.tplChart[props.template]
+    let returnRate = []
 
     if(props.datesRange && props.datesRange.length) {
       props.datesRange.map(d => {
@@ -37,9 +43,11 @@ export default class TplTaskChart extends Component {
           totalAmount.push(data[d].totalAmount)
           returnAmount.push(data[d].returnAmount)
           totalPage.push(data[d].totalPage)
+          returnRate.push(Math.round(((Math.abs(data[d].returnAmount) / Math.abs(data[d].totalAmount)).toFixed(2)) * 100))
         }
       })
     }
+    
     
     this.state = {
       template: props.template,
@@ -50,6 +58,7 @@ export default class TplTaskChart extends Component {
       totalAmount,
       returnAmount,
       totalPage,
+      returnRate,
       yAxisTxt
     };
   }
@@ -60,6 +69,7 @@ export default class TplTaskChart extends Component {
     let totalPage = []
     let yAxisTxt = []
     let data = chartData.tplChart[nextProps.template]
+    let returnRate = []
 
     if(nextProps.datesRange && nextProps.datesRange.length) {
       nextProps.datesRange.map(d => {
@@ -68,6 +78,7 @@ export default class TplTaskChart extends Component {
           totalAmount.push(data[d].totalAmount)
           returnAmount.push(data[d].returnAmount)
           totalPage.push(data[d].totalPage)
+          returnRate.push(Math.round(((Math.abs(data[d].returnAmount) / Math.abs(data[d].totalAmount)).toFixed(2)) * 100))
         }
       })
     }
@@ -80,6 +91,7 @@ export default class TplTaskChart extends Component {
       totalAmount,
       returnAmount,
       totalPage,
+      returnRate,
       yAxisTxt
     })
     setTimeout(() => {
@@ -100,7 +112,8 @@ export default class TplTaskChart extends Component {
       totalAmount,
       totalPage,
       returnAmount,
-      template
+      template,
+      returnRate
     } = this.state
 
     const waterMarkText = 'ECHARTS';
@@ -129,7 +142,7 @@ export default class TplTaskChart extends Component {
         }
       },
       itemStyle: {
-        color: colors[0]
+        color: COLORS[0]
       },
       data: totalAmount
     }
@@ -145,7 +158,7 @@ export default class TplTaskChart extends Component {
         }
       },
       itemStyle: {
-        color: template === 'zj' ? colors[3] : colors[1]
+        color: template === 'zj' ? COLORS[3] : COLORS[1]
       },
       data: returnAmount
     }
@@ -160,7 +173,7 @@ export default class TplTaskChart extends Component {
         }
       },
       itemStyle: {
-        color: colors[2]
+        color: COLORS[2]
       },
       yAxisIndex: 1,
       data: totalPage
@@ -168,12 +181,7 @@ export default class TplTaskChart extends Component {
     const seriesConfig = template !== 'zj' ? [returnAmountSeries, totalAmountSeries, totalPageSeries] : [totalAmountSeries, returnAmountSeries, totalPageSeries]
 
     myChart.setOption({
-      // backgroundColor: {
-      //   type: 'pattern',
-      //   image: canvas,
-      //   repeat: 'repeat'
-      // },
-      color: colors,
+      color: COLORS,
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -183,10 +191,17 @@ export default class TplTaskChart extends Component {
           let relVal = `<p style="margin: 0;padding: 0;font-size: 16px;">${data[0].name}</p>`
           let dataIndex = data[0].dataIndex
           
-          let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#80b3ff;"></span> 总卷数</p> <p style="font-weight: bold;">${this.state.totalAmount[dataIndex]}卷</p></div>`
-          let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#FF8A80;"></span> 被退回卷数</p> <p style="font-weight: bold;">${this.state.returnAmount[dataIndex]}卷</p></div>`
-          let totalPageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#ffb84d;"></span> 总页数</p> <p style="font-weight: bold;">${this.state.totalPage[dataIndex]}页</p></div>`
-          return relVal + totalAmountStr + returnAmountStr + totalPageStr
+          let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[0]};"></span> ${legendTxt[0]}</p> <p style="font-weight: bold;">${totalAmount[dataIndex]}卷</p></div>`
+          let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[1]}"></span> ${legendTxt[1]}</p> <p style="font-weight: bold;">${returnAmount[dataIndex]}卷</p></div>`
+          let totalPageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[2]}"></span> ${legendTxt[2]}</p> <p style="font-weight: bold;">${totalPage[dataIndex]}页</p></div>`
+          let returnRateStr = ''
+          if (template !== 'zj') {
+            returnRateStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[1]};"></span> 被退回率</p> <p style="font-weight: bold;">${returnRate[dataIndex]}%</p></div>`
+          }
+          
+          return template === 'zj' ? (relVal + totalAmountStr + returnAmountStr + totalPageStr) : (
+            relVal + totalAmountStr + returnAmountStr + returnRateStr + totalPageStr
+          )
         }
       },
       legend: {
@@ -221,7 +236,7 @@ export default class TplTaskChart extends Component {
           axisLine: {
             show: true,
             lineStyle: {
-              color: colors[0]
+              color: COLORS[0]
             }
           },
           axisLabel: {
@@ -244,7 +259,7 @@ export default class TplTaskChart extends Component {
           axisLine: {
             show: true,
             lineStyle: {
-              color: colors[2]
+              color: COLORS[2]
             } 
           },
           axisLabel: {

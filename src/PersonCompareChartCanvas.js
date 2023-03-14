@@ -23,6 +23,12 @@ const template = {
   'pt': '影像处理',
   'zj': '质检管理',
 }
+const chartDataTypeIndex = {
+  '1day': '日',
+  '31days': '日',
+  '6months': '月',
+  '1year': '年'
+}
 
 let personCompareChart;
 
@@ -35,15 +41,16 @@ export default class PersonCompareChartCanvas extends Component {
     let returnRate = []
     let totalPage = []
     let yAxisTxt = []
+    let legendTxt = props.template === 'zj' ? ['发现合格卷数', '发现不合格卷数', '总页数'] : ['总卷数', '被退回卷数', '总页数', '被退回率']
     let personListChart = chartData.personListChart
     let chartDataType = props.chartDataType
     let formatPersonList = []
     let groupReturnRate = 0
+    let workAverage = 0
 
     personListChart.map(obj => {
       let personName = Object.keys(obj)[0]
       let personData = {}
-
       if (obj[personName] && obj[personName][props.template] && obj[personName][props.template][chartDataType]) {
         personData.name = personName
         personData.totalAmount = obj[personName][props.template][chartDataType].totalAmount
@@ -52,11 +59,9 @@ export default class PersonCompareChartCanvas extends Component {
         formatPersonList.push(personData)
       }
     })
-
     formatPersonList.sort((a, b) => {
       return b.totalPage - a.totalPage
     })
-
     formatPersonList.map(v => {
       yAxisTxt.push(v.name)
       totalAmount.push(v.totalAmount)
@@ -64,18 +69,15 @@ export default class PersonCompareChartCanvas extends Component {
       totalPage.push(v.totalPage)
       returnRate.push(Math.round(((Math.abs(v.returnAmount) / Math.abs(v.totalAmount)).toFixed(2)) * 100))
     })
-
     if (props.template !== 'zj') {
       let groupTotalAmount = sum(totalAmount)
       let groupReturnAmount = sum(returnAmount)
       groupReturnRate = Math.round(((groupReturnAmount / groupTotalAmount).toFixed(2)) * 100)
-
-      console.log(returnRate)
     }
     
     this.state = {
       templateTxt: template[props.template] || '',
-      legendTxt: [`${props.template === 'zj' ? '发现合格卷数' : '总卷数'}`, `${props.template === 'zj' ? '发现不合格卷数' : '被退回卷数'}`, '总页数', '被退回率'],
+      legendTxt,
       template: props.template,
       datesRangeTxt: props.datesRangeTxt || '',
       datesRange: props.datesRange,
@@ -84,7 +86,8 @@ export default class PersonCompareChartCanvas extends Component {
       returnRate,
       totalPage,
       yAxisTxt,
-      groupReturnRate
+      groupReturnRate,
+      chartDataTypeIndex: chartDataTypeIndex[chartDataType]
     };
   }
 
@@ -95,6 +98,7 @@ export default class PersonCompareChartCanvas extends Component {
     let returnRate = []
     let totalPage = []
     let yAxisTxt = []
+    let legendTxt = nextProps.template === 'zj' ? ['发现合格卷数', '发现不合格卷数', '总页数'] : ['总卷数', '被退回卷数', '总页数', '被退回率']
     let personListChart = chartData.personListChart
     let chartDataType = nextProps.chartDataType
     let formatPersonList = []
@@ -135,7 +139,7 @@ export default class PersonCompareChartCanvas extends Component {
     this.setState({
       templateTxt: template[nextProps.template] || '',
       template: nextProps.template,
-      legendTxt: [`${nextProps.template === 'zj' ? '发现合格卷数' : '总卷数'}`, `${nextProps.template === 'zj' ? '发现不合格卷数' : '被退回卷数'}`, '总页数', '被退回率'],
+      legendTxt,
       datesRangeTxt: nextProps.datesRangeTxt || '',
       datesRange: nextProps.datesRange,
       totalAmount,
@@ -411,8 +415,8 @@ export default class PersonCompareChartCanvas extends Component {
       returnAmount,
       totalPage,
       returnRate,
-      groupReturnRate,
-      legendTxt
+      legendTxt,
+      chartDataTypeIndex
     } = this.state
 
     personCompareChart.resize()
@@ -441,11 +445,20 @@ export default class PersonCompareChartCanvas extends Component {
           
           let totalAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[0]};"></span> ${legendTxt[0]}</p> <p style="font-weight: bold;">${totalAmount[dataIndex]}卷</p></div>`
           let returnAmountStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[1]};"></span> ${legendTxt[1]}</p> <p style="font-weight: bold;">${returnAmount[dataIndex]}卷</p></div>`
-          let returnRateStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[1]};"></span> ${legendTxt[3]}</p> <p style="font-weight: bold;">${returnRate[dataIndex]}%</p></div>`
           let totalPageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[2]};"></span> ${legendTxt[2]}</p> <p style="font-weight: bold;">${totalPage[dataIndex]}页</p></div>`
+          let workAverage = Math.floor(totalPage[dataIndex] / this.state.datesRange.length)
           
+          let workAverageStr = ''
+          let returnRateStr = ''
+          let typeTxt = chartDataTypeIndex
+
+          if (template !== 'zj') {
+            returnRateStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[1]};"></span> ${legendTxt[3]}</p> <p style="font-weight: bold;">${returnRate[dataIndex]}%</p></div>`
+            workAverageStr = `<div  style="display: flex;justify-content: space-between;align: center;height: 30px;"><p style="margin-right: 30px;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:${COLORS[2]};"></span> ${typeTxt}均工作量</p> <p style="font-weight: bold;">${workAverage}页</p></div>`
+          }
+
           return template === 'zj' ? (relVal + totalAmountStr + returnAmountStr + totalPageStr) : (
-            relVal + totalAmountStr + returnAmountStr + returnRateStr + totalPageStr
+            relVal + totalAmountStr + returnAmountStr + returnRateStr + totalPageStr + workAverageStr
           )
         }
       },
